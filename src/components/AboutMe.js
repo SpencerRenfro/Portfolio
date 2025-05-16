@@ -40,32 +40,32 @@ const AboutMe = () => {
           <div className="mb-12">
             <h2 className="text-2xl mb-6 font-semibold">Skills</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              <div className="bg-slate-800 p-4 rounded-lg text-center hover:bg-slate-700 transition-colors">
-                <p className="font-medium">React</p>
+              <div className="bg-white dark:bg-slate-800 p-4 rounded-lg text-center shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-slate-700">
+                <p className="font-medium text-gray-800 dark:text-white">React</p>
               </div>
-              <div className="bg-slate-800 p-4 rounded-lg text-center hover:bg-slate-700 transition-colors">
-                <p className="font-medium">JavaScript</p>
+              <div className="bg-white dark:bg-slate-800 p-4 rounded-lg text-center shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-slate-700">
+                <p className="font-medium text-gray-800 dark:text-white">JavaScript</p>
               </div>
-              <div className="bg-slate-800 p-4 rounded-lg text-center hover:bg-slate-700 transition-colors">
-                <p className="font-medium">Java</p>
+              <div className="bg-white dark:bg-slate-800 p-4 rounded-lg text-center shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-slate-700">
+                <p className="font-medium text-gray-800 dark:text-white">Java</p>
               </div>
-              <div className="bg-slate-800 p-4 rounded-lg text-center hover:bg-slate-700 transition-colors">
-                <p className="font-medium">SQL</p>
+              <div className="bg-white dark:bg-slate-800 p-4 rounded-lg text-center shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-slate-700">
+                <p className="font-medium text-gray-800 dark:text-white">SQL</p>
               </div>
-              <div className="bg-slate-800 p-4 rounded-lg text-center hover:bg-slate-700 transition-colors">
-                <p className="font-medium">Firebase</p>
+              <div className="bg-white dark:bg-slate-800 p-4 rounded-lg text-center shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-slate-700">
+                <p className="font-medium text-gray-800 dark:text-white">Firebase</p>
               </div>
-              <div className="bg-slate-800 p-4 rounded-lg text-center hover:bg-slate-700 transition-colors">
-                <p className="font-medium">HTML5</p>
+              <div className="bg-white dark:bg-slate-800 p-4 rounded-lg text-center shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-slate-700">
+                <p className="font-medium text-gray-800 dark:text-white">HTML5</p>
               </div>
-              <div className="bg-slate-800 p-4 rounded-lg text-center hover:bg-slate-700 transition-colors">
-                <p className="font-medium">CSS3</p>
+              <div className="bg-white dark:bg-slate-800 p-4 rounded-lg text-center shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-slate-700">
+                <p className="font-medium text-gray-800 dark:text-white">CSS3</p>
               </div>
-              <div className="bg-slate-800 p-4 rounded-lg text-center hover:bg-slate-700 transition-colors">
-                <p className="font-medium">Tailwind CSS</p>
+              <div className="bg-white dark:bg-slate-800 p-4 rounded-lg text-center shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-slate-700">
+                <p className="font-medium text-gray-800 dark:text-white">Tailwind CSS</p>
               </div>
-              <div className="bg-slate-800 p-4 rounded-lg text-center hover:bg-slate-700 transition-colors">
-                <p className="font-medium">Git</p>
+              <div className="bg-white dark:bg-slate-800 p-4 rounded-lg text-center shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-slate-700">
+                <p className="font-medium text-gray-800 dark:text-white">Git</p>
               </div>
             </div>
           </div>
@@ -100,6 +100,18 @@ const AboutMe = () => {
               <h3 className="text-xl font-medium">Bachelor's Degree in Computer Science</h3>
               <p className="text-slate-400">University Name | 2016 - 2020</p>
               <p className="mt-2">Focused on web development and user interface design. Graduated with honors.</p>
+              <div className="mt-4">
+                <a
+                  href="/files/resume.pdf"
+                  download
+                  className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                  Download Resume
+                </a>
+              </div>
             </div>
           </div>
 
