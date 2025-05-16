@@ -591,7 +591,7 @@ const SnowboardingStats = () => {
         {/* Season 2022/2023 Stats */}
         {activeTab === '2223' && (
           <div>
-            <h4 className="text-lg font-medium mb-4 text-slate-200 flex items-center">
+            <h4 className="text-lg font-medium mb-4 text-gray-800 dark:text-slate-200 flex items-center">
               <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
               Season 2022/2023
             </h4>
@@ -599,134 +599,134 @@ const SnowboardingStats = () => {
             <div className="mb-6">
               <div className="flex items-center mb-3">
                 <div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                <h5 className="text-sm font-medium text-slate-300">Combined Stats</h5>
+                <h5 className="text-sm font-medium text-gray-700 dark:text-slate-300">Combined Stats</h5>
               </div>
 
               <div className="grid grid-cols-3 gap-5 mb-6">
-                <div className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors">
-                  <p className="text-3xl font-bold text-white">12</p>
-                  <p className="text-xs uppercase tracking-wider text-slate-400 mt-1">Days Tracked</p>
+                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
+                  <p className="text-3xl font-bold text-gray-800 dark:text-white">12</p>
+                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">Days Tracked</p>
                 </div>
-                <div className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors">
-                  <p className="text-3xl font-bold text-white">98</p>
-                  <p className="text-xs uppercase tracking-wider text-slate-400 mt-1">Lifts</p>
+                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
+                  <p className="text-3xl font-bold text-gray-800 dark:text-white">98</p>
+                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">Lifts</p>
                 </div>
-                <div className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors">
-                  <p className="text-3xl font-bold text-white">127</p>
-                  <p className="text-xs uppercase tracking-wider text-slate-400 mt-1">Trails</p>
+                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
+                  <p className="text-3xl font-bold text-gray-800 dark:text-white">127</p>
+                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">Trails</p>
                 </div>
               </div>
 
               <div className="grid grid-cols-3 gap-5 mb-6">
-                <div className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors">
-                  <p className="text-3xl font-bold text-white">156.2</p>
-                  <p className="text-xs uppercase tracking-wider text-slate-400 mt-1">Miles</p>
+                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
+                  <p className="text-3xl font-bold text-gray-800 dark:text-white">156.2</p>
+                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">Miles</p>
                 </div>
-                <div className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors">
-                  <p className="text-3xl font-bold text-white">168.5K</p>
-                  <p className="text-xs uppercase tracking-wider text-slate-400 mt-1">Vert Ft</p>
+                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
+                  <p className="text-3xl font-bold text-gray-800 dark:text-white">168.5K</p>
+                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">Vert Ft</p>
                 </div>
-                <div className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors">
-                  <p className="text-3xl font-bold text-white">8.7</p>
-                  <p className="text-xs uppercase tracking-wider text-slate-400 mt-1">Days Total</p>
+                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
+                  <p className="text-3xl font-bold text-gray-800 dark:text-white">8.7</p>
+                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">Days Total</p>
                 </div>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-6 mb-6">
               {/* Epic Pass Stats */}
-              <div className="bg-slate-800 p-5 rounded-lg border border-slate-700">
+              <div className="bg-white dark:bg-slate-800 p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
                 <div className="flex items-center mb-3">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-yellow-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
                   </svg>
-                  <h5 className="text-sm font-medium text-slate-200">Epic</h5>
+                  <h5 className="text-sm font-medium text-gray-800 dark:text-slate-200">Epic</h5>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mb-3">
                   <div>
-                    <p className="text-xs text-slate-400 mb-1">Days Tracked</p>
-                    <p className="text-lg font-semibold">8 days</p>
+                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Days Tracked</p>
+                    <p className="text-lg font-semibold text-gray-800 dark:text-white">8 days</p>
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400 mb-1">Vertical</p>
-                    <p className="text-lg font-semibold">112,450 ft</p>
+                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Vertical</p>
+                    <p className="text-lg font-semibold text-gray-800 dark:text-white">112,450 ft</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mb-3">
                   <div>
-                    <p className="text-xs text-slate-400 mb-1">Lifts Ridden</p>
-                    <p className="text-lg font-semibold">72 lifts</p>
+                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Lifts Ridden</p>
+                    <p className="text-lg font-semibold text-gray-800 dark:text-white">72 lifts</p>
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400 mb-1">Miles</p>
-                    <p className="text-lg font-semibold">87.6 mi</p>
+                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Miles</p>
+                    <p className="text-lg font-semibold text-gray-800 dark:text-white">87.6 mi</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <p className="text-xs text-slate-400 mb-1">Highest Elevation</p>
-                    <p className="text-lg font-semibold">11,250 ft</p>
+                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Highest Elevation</p>
+                    <p className="text-lg font-semibold text-gray-800 dark:text-white">11,250 ft</p>
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400 mb-1">Most Visited</p>
-                    <p className="text-lg font-semibold">Breckenridge</p>
+                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Most Visited</p>
+                    <p className="text-lg font-semibold text-gray-800 dark:text-white">Breckenridge</p>
                   </div>
                 </div>
               </div>
 
               {/* Ikon Pass Stats */}
-              <div className="bg-slate-800 p-5 rounded-lg border border-slate-700">
+              <div className="bg-white dark:bg-slate-800 p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
                 <div className="flex items-center mb-3">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-400 mr-2" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
                   </svg>
-                  <h5 className="text-sm font-medium text-slate-200">Ikon</h5>
+                  <h5 className="text-sm font-medium text-gray-800 dark:text-slate-200">Ikon</h5>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mb-3">
                   <div>
-                    <p className="text-xs text-slate-400 mb-1">Days Tracked</p>
-                    <p className="text-lg font-semibold">4 days</p>
+                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Days Tracked</p>
+                    <p className="text-lg font-semibold text-gray-800 dark:text-white">4 days</p>
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400 mb-1">Vertical</p>
-                    <p className="text-lg font-semibold">56,050 ft</p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-slate-400 mb-1">Lifts Ridden</p>
-                    <p className="text-lg font-semibold">26 lifts</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-slate-400 mb-1">Trails</p>
-                    <p className="text-lg font-semibold">127 trails</p>
+                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Vertical</p>
+                    <p className="text-lg font-semibold text-gray-800 dark:text-white">56,050 ft</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mb-3">
                   <div>
-                    <p className="text-xs text-slate-400 mb-1">Miles</p>
-                    <p className="text-lg font-semibold">68.6 miles</p>
+                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Lifts Ridden</p>
+                    <p className="text-lg font-semibold text-gray-800 dark:text-white">26 lifts</p>
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400 mb-1">Time on Mountain</p>
-                    <p className="text-lg font-semibold">18.3 hours</p>
+                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Trails</p>
+                    <p className="text-lg font-semibold text-gray-800 dark:text-white">127 trails</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 mb-3">
+                  <div>
+                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Miles</p>
+                    <p className="text-lg font-semibold text-gray-800 dark:text-white">68.6 miles</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Time on Mountain</p>
+                    <p className="text-lg font-semibold text-gray-800 dark:text-white">18.3 hours</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <p className="text-xs text-slate-400 mb-1">Most Visited</p>
-                    <p className="text-lg font-semibold">Winter Park</p>
+                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Most Visited</p>
+                    <p className="text-lg font-semibold text-gray-800 dark:text-white">Winter Park</p>
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400 mb-1">Days Total</p>
-                    <p className="text-lg font-semibold">~0.7 days</p>
+                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Days Total</p>
+                    <p className="text-lg font-semibold text-gray-800 dark:text-white">~0.7 days</p>
                   </div>
                 </div>
               </div>
