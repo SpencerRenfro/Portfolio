@@ -1,0 +1,133 @@
+import React from "react";
+import Navigation from "./Navigation";
+
+const Home = () => {
+  const projects = [
+    {
+      title: "Scanner App",
+      link: "https://scanner-app.example.com/",
+      gitHubLink: "https://github.com/SpencerwRenfro/scanner-app",
+      img: "/images/scanner.svg",
+      description: "A mobile-friendly app for scanning and organizing documents with OCR capabilities."
+    },
+    {
+      title: "Polytopia Calculator",
+      link: "http://mypolytopia.s3-website.us-east-2.amazonaws.com/",
+      gitHubLink: "https://github.com/SpencerwRenfro/React-Polytopia",
+      img: "/images/polytopia.svg",
+      description: "A strategic calculator tool for the popular mobile game Polytopia, helping players optimize their gameplay."
+    },
+    {
+      title: "Guest House Counseling",
+      link: "http://mypolytopia.s3-website.us-east-2.amazonaws.com/",
+      gitHubLink: "https://github.com/SpencerwRenfro/React-Polytopia",
+      img: "/images/guesthouse.svg",
+      description: "A responsive website for a counseling practice, featuring appointment scheduling and resource library."
+    },
+    {
+      title: "Digital Business Card",
+      link: "http://mypolytopia.s3-website.us-east-2.amazonaws.com/",
+      gitHubLink: "https://github.com/SpencerwRenfro/React-Polytopia",
+      img: "/images/businesscard.svg",
+      description: "A modern digital business card application with QR code generation and contact information sharing."
+    },
+  ];
+
+  return (
+    <div>
+      {/* Navigation */}
+      <Navigation />
+
+      {/* Header Section */}
+      <div className="grid grid-cols-12 px-10 pt-10 mb-20">
+        <div className="col-span-12 lg:col-start-3 lg:col-span-8 text-center">
+          <img
+            className="rounded-full w-36 mx-auto mb-5 mt-5"
+            src="https://i.pravatar.cc/"
+            alt="Headshot"
+          />
+          <h1 className="text-5xl mb-3 font-extrabold">Spencer Renfro</h1>
+          <h2 className="mb-8 text-3xl uppercase tracking-widest font-light">
+            Front-End Developer
+          </h2>
+          <p className="text-center text-xl mb-8 leading-8">
+            I am a motivated and capable front-end developer who brings a strong
+            foundation in React, HTML, CSS, and JavaScript to any team.
+          </p>
+          <div className="flex justify-center items-center gap-8">
+            <a
+              href="https://www.linkedin.com/in/spencer-renfro-854b22174/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+            >
+              <img src="/images/linkedin.svg" alt="LinkedIn Logo" width="32" height="32" />
+            </a>
+            <a
+              href="https://github.com/SpencerwRenfro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+            >
+              <img src="/images/github.svg" alt="GitHub Logo" width="32" height="32" />
+            </a>
+            <a
+              href="mailto:your_email@example.com"
+              className="hover:opacity-80 transition-opacity"
+            >
+              <img src="/images/email.svg" alt="Email Icon" width="32" height="32" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Projects Section */}
+      <div className="grid grid-cols-12 mx-auto py-2 mb-20">
+        <div className="col-start-3 col-span-8">
+          <h3 className="uppercase text-lg tracking-widest font-medium mb-8">
+            My Projects
+          </h3>
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="card bg-base-100 shadow-lg border border-slate-700 rounded-sm mb-5"
+            >
+              <div className="card-body p-4">
+                <div className="flex flex-row items-center gap-8 mb-2">
+                  <img className="w-12" src={project.img} alt={`${project.title} Logo`} />
+                  <p className="basis-full text-xl font-medium">{project.title}</p>
+                  <a
+                    className="btn btn-primary text-xs"
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Project
+                  </a>
+                  <a
+                    className="btn btn-outline text-xs"
+                    href={project.gitHubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View on GitHub
+                  </a>
+                </div>
+                {project.description && (
+                  <p className="text-slate-400 text-sm mt-2">{project.description}</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Footer Section */}
+      <div className="max-w-full mx-auto text-center border-t border-slate-700 py-5">
+        <p className="text-slate-500">&copy; {new Date().getFullYear()} Spencer Renfro</p>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
