@@ -5,7 +5,7 @@ import SnowboardingStats from "./SnowboardingStats";
 const AboutMe = () => {
 
   return (
-    <div>
+    <div className="bg-white dark:bg-slate-900 text-gray-800 dark:text-white">
       {/* Navigation */}
       <Navigation />
 
@@ -75,7 +75,7 @@ const AboutMe = () => {
             <h2 className="text-2xl mb-6 font-semibold">Experience</h2>
             <div className="mb-6 border-l-4 border-blue-500 pl-4">
               <h3 className="text-xl font-medium">Front-End Developer</h3>
-              <p className="text-slate-400">Company Name | 2021 - Present</p>
+              <p className="text-gray-500 dark:text-slate-400">Company Name | 2021 - Present</p>
               <ul className="list-disc ml-5 mt-2">
                 <li>Developed responsive web applications using React and Tailwind CSS</li>
                 <li>Collaborated with design team to implement UI/UX improvements</li>
@@ -84,7 +84,7 @@ const AboutMe = () => {
             </div>
             <div className="mb-6 border-l-4 border-blue-500 pl-4">
               <h3 className="text-xl font-medium">Web Developer Intern</h3>
-              <p className="text-slate-400">Previous Company | 2020 - 2021</p>
+              <p className="text-gray-500 dark:text-slate-400">Previous Company | 2020 - 2021</p>
               <ul className="list-disc ml-5 mt-2">
                 <li>Assisted in developing and maintaining company website</li>
                 <li>Learned modern web development practices and tools</li>
@@ -98,7 +98,7 @@ const AboutMe = () => {
             <h2 className="text-2xl mb-6 font-semibold">Education</h2>
             <div className="mb-6">
               <h3 className="text-xl font-medium">Bachelor's Degree in Computer Science</h3>
-              <p className="text-slate-400">University Name | 2016 - 2020</p>
+              <p className="text-gray-500 dark:text-slate-400">University Name | 2016 - 2020</p>
               <p className="mt-2">Focused on web development and user interface design. Graduated with honors.</p>
               <div className="mt-4">
                 <a
@@ -136,7 +136,7 @@ const AboutMe = () => {
       </div>
 
       {/* Footer Section */}
-      <div className="max-w-full mx-auto text-center border-t border-slate-700 py-5">
+      <div className="max-w-full mx-auto text-center border-t border-gray-200 dark:border-slate-700 py-5">
         <div className="flex justify-center items-center gap-8 mb-4">
           <a
             href="https://www.linkedin.com/in/spencer-renfro-854b22174/"
@@ -161,7 +161,7 @@ const AboutMe = () => {
             <img src="/images/email.svg" alt="Email Icon" width="24" height="24" />
           </a>
         </div>
-        <p className="text-slate-500">&copy; {new Date().getFullYear()} Spencer Renfro</p>
+        <p className="text-gray-500 dark:text-slate-500">&copy; {new Date().getFullYear()} Spencer Renfro</p>
       </div>
     </div>
   );
