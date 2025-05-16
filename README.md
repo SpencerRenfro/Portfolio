@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A personal portfolio website built with React and Tailwind CSS, featuring responsive design, light/dark mode support, and interactive components.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Responsive design that works on mobile, tablet, and desktop
+- Light and dark mode support based on user system preferences
+- Interactive snowboarding statistics with season-by-season breakdown
+- Project showcase with detailed descriptions
+- Skills section highlighting technical abilities
+- Resume download functionality
+- Social media links
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Before you begin, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v14.0.0 or later)
+- [npm](https://www.npmjs.com/) (v6.0.0 or later)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+Follow these steps to get the portfolio website running on your local machine:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. Clone the repository
 
-### `npm run build`
+```bash
+git clone https://github.com/SpencerRenfro/Portfolio.git
+cd Portfolio
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Install dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. Start the development server
 
-### `npm run eject`
+```bash
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This will start the development server and open the website in your default browser at [http://localhost:3000](http://localhost:3000).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Building for Production
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To create a production build of the website:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm run build
+```
 
-## Learn More
+This will create an optimized build in the `build` folder that you can deploy to a web server.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can deploy this portfolio to various platforms:
 
-### Code Splitting
+### GitHub Pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Install the gh-pages package:
+```bash
+npm install --save-dev gh-pages
+```
 
-### Analyzing the Bundle Size
+2. Add the following to your `package.json`:
+```json
+"homepage": "https://SpencerRenfro.github.io/Portfolio",
+"scripts": {
+  // other scripts
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Deploy to GitHub Pages:
+```bash
+npm run deploy
+```
 
-### Making a Progressive Web App
+### Netlify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Create a `netlify.toml` file in the root directory:
+```toml
+[build]
+  command = "npm run build"
+  publish = "build"
+```
 
-### Advanced Configuration
+2. Deploy to Netlify using their CLI or connect your GitHub repository through their website.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Customization
 
-### Deployment
+### Changing Content
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Most of the content can be modified by editing the component files in the `src/components` directory:
 
-### `npm run build` fails to minify
+- `AboutMe.js` - Personal information, education, and experience
+- `Projects.js` - Project showcase
+- `SnowboardingStats.js` - Snowboarding statistics
+- `Navigation.js` - Navigation links
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Styling
+
+This project uses Tailwind CSS for styling. You can customize the theme by editing the `tailwind.config.js` file.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Create React App](https://create-react-app.dev/)
