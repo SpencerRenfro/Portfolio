@@ -1,9 +1,231 @@
 import React, { useState } from "react";
 import ikon from "../assets/ikon_pngKey.png";
 import epic from "../assets/epic_pngKey.png";
+// Import reusable component
+import SeasonStatsCard from "./snowboarding/SeasonStatsCard";
 
 const SnowboardingStats = () => {
   const [activeTab, setActiveTab] = useState("2021");
+
+  // Create an array of season data objects
+  const seasonData = [
+    {
+      id: "2425",
+      seasonName: "2024/2025",
+      combinedStats: {
+        daysTracked: "13",
+        lifts: "113",
+        trails: "236",
+        miles: "121.67",
+        vertFt: "157.2K",
+        daysTotal: "3.3"
+      },
+      epicStats: {
+        daysTracked: "2 days",
+        vertical: "43,241 ft",
+        liftsRidden: "28 lifts",
+        miles: "0.67 mi",
+        highestElevation: "8,657 ft",
+        timeOnMountain: "2 days"
+      },
+      ikonStats: {
+        daysTracked: "11 days",
+        vertical: "114,000 ft",
+        liftsRidden: "85 lifts",
+        trails: "236 trails",
+        miles: "121 miles",
+        timeOnMountain: "31.0 hours (~1.3 days)",
+        mostVisited: "Winter Park",
+        lastDay: "April 13th, 2025"
+      },
+      difficulty: {
+        title: "Difficulty Breakdown (Ikon)",
+        green: 15,
+        blue: 67,
+        black: 18
+      }
+    },
+    {
+      id: "2324",
+      seasonName: "2023/2024",
+      combinedStats: {
+        daysTracked: "15",
+        lifts: "140",
+        trails: "141",
+        miles: "177.3",
+        vertFt: "193.7K",
+        daysTotal: "10.9"
+      },
+      epicStats: {
+        daysTracked: "10 days",
+        vertical: "130,600 ft",
+        liftsRidden: "88 lifts",
+        miles: "94.34 mi",
+        highestElevation: "12,491 ft",
+        mostVisited: "Keystone"
+      },
+      ikonStats: {
+        daysTracked: "5 days",
+        vertical: "63,135 ft",
+        liftsRidden: "52 lifts",
+        trails: "141 trails",
+        miles: "83 miles",
+        timeOnMountain: "21.6 hours",
+        mostVisited: "Arapahoe Basin",
+        daysTotal: "~0.9 days"
+      },
+      difficulty: {
+        title: "Difficulty Breakdown (Ikon)",
+        green: 42,
+        blue: 38,
+        black: 20
+      }
+    },
+    {
+      id: "2223",
+      seasonName: "2022/2023",
+      combinedStats: {
+        daysTracked: "12",
+        lifts: "98",
+        trails: "112",
+        miles: "143.5",
+        vertFt: "168.2K",
+        daysTotal: "8.7"
+      },
+      epicStats: {
+        daysTracked: "8 days",
+        vertical: "112,450 ft",
+        liftsRidden: "67 lifts",
+        miles: "89.3 mi",
+        highestElevation: "11,250 ft",
+        mostVisited: "Breckenridge"
+      },
+      ikonStats: {
+        daysTracked: "4 days",
+        vertical: "55,750 ft",
+        liftsRidden: "31 lifts",
+        trails: "112 trails",
+        miles: "54.2 miles",
+        timeOnMountain: "18.4 hours",
+        mostVisited: "Winter Park",
+        daysTotal: "~0.8 days"
+      },
+      difficulty: {
+        title: "Difficulty Breakdown (Ikon)",
+        green: 35,
+        blue: 45,
+        black: 20
+      }
+    },
+    {
+      id: "2122",
+      seasonName: "2021/2022",
+      combinedStats: {
+        daysTracked: "10",
+        lifts: "78",
+        trails: "102",
+        miles: "112.8",
+        vertFt: "124.5K",
+        daysTotal: "7.2"
+      },
+      epicStats: {
+        daysTracked: "6 days",
+        vertical: "82,350 ft",
+        liftsRidden: "53 lifts",
+        miles: "76.4 mi",
+        highestElevation: "10,780 ft",
+        mostVisited: "Vail"
+      },
+      ikonStats: {
+        daysTracked: "4 days",
+        vertical: "42,150 ft",
+        liftsRidden: "25 lifts",
+        trails: "102 trails",
+        miles: "36.4 miles",
+        timeOnMountain: "15.8 hours",
+        mostVisited: "Copper Mountain",
+        daysTotal: "~0.7 days"
+      },
+      difficulty: {
+        title: "Difficulty Breakdown (Ikon)",
+        green: 40,
+        blue: 45,
+        black: 15
+      }
+    },
+    {
+      id: "2021",
+      seasonName: "2020/2021",
+      combinedStats: {
+        daysTracked: "36",
+        lifts: "215",
+        trails: "187",
+        miles: "324.6",
+        vertFt: "505.4K",
+        daysTotal: "15.8"
+      },
+      epicStats: {
+        daysTracked: "31 days",
+        vertical: "436,991 ft",
+        liftsRidden: "183 lifts",
+        miles: "278.2 mi",
+        highestElevation: "12,998 ft",
+        mostVisited: "Breckenridge"
+      },
+      ikonStats: {
+        daysTracked: "5 days",
+        vertical: "68,450 ft",
+        liftsRidden: "32 lifts",
+        trails: "187 trails",
+        miles: "46.4 miles",
+        timeOnMountain: "22.5 hours",
+        mostVisited: "Winter Park",
+        daysTotal: "~0.9 days"
+      },
+      difficulty: {
+        title: "Difficulty Breakdown (Ikon)",
+        green: 40,
+        blue: 45,
+        black: 15
+      }
+    },
+    {
+      id: "lifetime",
+      seasonName: "Lifetime Stats",
+      combinedStats: {
+        daysTracked: "86",
+        lifts: "644",
+        trails: "778",
+        miles: "879.9",
+        vertFt: "1.15M",
+        daysTotal: "45.9"
+      },
+      epicStats: {
+        daysTracked: "57 days",
+        vertical: "805,632 ft",
+        liftsRidden: "419 lifts",
+        miles: "539.0 mi",
+        highestElevation: "12,998 ft",
+        mostVisited: "Breckenridge"
+      },
+      ikonStats: {
+        daysTracked: "29 days",
+        vertical: "343,485 ft",
+        liftsRidden: "225 lifts",
+        trails: "778 trails",
+        miles: "340.9 miles",
+        timeOnMountain: "109.3 hours",
+        mostVisited: "Winter Park",
+        daysTotal: "~4.6 days"
+      },
+      difficulty: {
+        title: "Difficulty Breakdown (Overall)",
+        green: 34,
+        blue: 48,
+        black: 18
+      }
+    }
+  ];
 
   return (
     <div className="mt-8 border border-gray-200 dark:border-slate-700 rounded-lg overflow-hidden shadow-lg">
@@ -18,1619 +240,41 @@ const SnowboardingStats = () => {
 
       {/* React-based Tab Navigation */}
       <div className="flex flex-wrap border-b border-gray-200 dark:border-slate-700">
-        <button
-          onClick={() => setActiveTab("2021")}
-          className={`py-3 px-4 text-sm font-medium border-r border-gray-200 dark:border-slate-700 transition-colors ${
-            activeTab === "2021"
-              ? "text-blue-600 bg-blue-50 dark:text-white dark:bg-slate-800"
-              : "text-gray-600 hover:bg-gray-100 hover:text-blue-600 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
-          }`}
-        >
-          20/21
-        </button>
-        <button
-          onClick={() => setActiveTab("2122")}
-          className={`py-3 px-4 text-sm font-medium border-r border-gray-200 dark:border-slate-700 transition-colors ${
-            activeTab === "2122"
-              ? "text-blue-600 bg-blue-50 dark:text-white dark:bg-slate-800"
-              : "text-gray-600 hover:bg-gray-100 hover:text-blue-600 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
-          }`}
-        >
-          21/22
-        </button>
-        <button
-          onClick={() => setActiveTab("2223")}
-          className={`py-3 px-4 text-sm font-medium border-r border-gray-200 dark:border-slate-700 transition-colors ${
-            activeTab === "2223"
-              ? "text-blue-600 bg-blue-50 dark:text-white dark:bg-slate-800"
-              : "text-gray-600 hover:bg-gray-100 hover:text-blue-600 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
-          }`}
-        >
-          22/23
-        </button>
-        <button
-          onClick={() => setActiveTab("2324")}
-          className={`py-3 px-4 text-sm font-medium border-r border-gray-200 dark:border-slate-700 transition-colors ${
-            activeTab === "2324"
-              ? "text-blue-600 bg-blue-50 dark:text-white dark:bg-slate-800"
-              : "text-gray-600 hover:bg-gray-100 hover:text-blue-600 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
-          }`}
-        >
-          23/24
-        </button>
-        <button
-          onClick={() => setActiveTab("2425")}
-          className={`py-3 px-4 text-sm font-medium border-r border-gray-200 dark:border-slate-700 transition-colors ${
-            activeTab === "2425"
-              ? "text-blue-600 bg-blue-50 dark:text-white dark:bg-slate-800"
-              : "text-gray-600 hover:bg-gray-100 hover:text-blue-600 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
-          }`}
-        >
-          24/25
-        </button>
-        <button
-          onClick={() => setActiveTab("lifetime")}
-          className={`py-3 px-4 text-sm font-medium transition-colors ${
-            activeTab === "lifetime"
-              ? "text-blue-600 bg-blue-50 dark:text-white dark:bg-slate-800"
-              : "text-gray-600 hover:bg-gray-100 hover:text-blue-600 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
-          }`}
-        >
-          Lifetime
-        </button>
+        {seasonData.map((season) => (
+          <button
+            key={season.id}
+            onClick={() => setActiveTab(season.id)}
+            className={`py-3 px-4 text-sm font-medium border-r border-gray-200 dark:border-slate-700 transition-colors ${
+              activeTab === season.id
+                ? "text-blue-600 bg-blue-50 dark:text-white dark:bg-slate-800"
+                : "text-gray-600 hover:bg-gray-100 hover:text-blue-600 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
+            }`}
+          >
+            {season.id === "lifetime" ? "Lifetime" : season.id.substring(0, 2) + "/" + season.id.substring(2)}
+          </button>
+        ))}
       </div>
 
       <div className="p-6 bg-white dark:bg-slate-900">
-        {/* Season 2024/2025 Stats */}
-        {activeTab === "2425" && (
-          <div>
-            <h4 className="text-lg font-medium mb-4 text-gray-800 dark:text-slate-200 flex items-center">
-              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-              Season 2024/2025
-            </h4>
-
-            <div className="mb-6">
-              <div className="flex items-center mb-3">
-                <div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                <h5 className="text-sm font-medium text-gray-700 dark:text-slate-300">
-                  Combined Stats
-                </h5>
-              </div>
-
-              <div className="grid grid-cols-3 gap-5 mb-6">
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    13
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Days Tracked
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    113
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Lifts
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    236
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Trails
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-3 gap-5 mb-6">
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    121.67
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Miles
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    157.2K
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Vert Ft
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    3.3
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Days Total
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6 mb-6">
-              {/* Epic Pass Stats */}
-              <div className="bg-white dark:bg-slate-800 p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
-                <div className="flex items-center mb-3">
-                  <img src={epic} width={50} alt="epic logo"/>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Days Tracked
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      2 days
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Vertical
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      43,241 ft
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Lifts Ridden
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      28 lifts
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Miles
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      0.67 mi
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Highest Elevation
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      8,657 ft
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Time on Mountain
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      2 days
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Ikon Pass Stats */}
-              <div className="bg-white dark:bg-slate-800 p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
-                <div className="flex items-center mb-3">
-                  <img src={ikon} width={50} alt="ikon logo" />
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Days Tracked
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      11 days
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Vertical
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      114,000 ft
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Lifts Ridden
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      85 lifts
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Trails
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      236 trails
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Miles
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      121 miles
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Time on Mountain
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      31.0 hours (~1.3 days)
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Most Visited
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      Winter Park
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Last Day
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      April 13th, 2025
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
-              <p className="text-sm font-medium mb-2 text-gray-700 dark:text-slate-300">
-                Difficulty Breakdown (Ikon)
-              </p>
-              <div className="w-full h-3 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden mb-2">
-                <div className="flex h-full">
-                  <div
-                    className="bg-green-500 h-full"
-                    style={{ width: "15%" }}
-                  ></div>
-                  <div
-                    className="bg-blue-500 h-full"
-                    style={{ width: "67%" }}
-                  ></div>
-                  <div
-                    className="bg-gray-800 dark:bg-slate-900 h-full"
-                    style={{ width: "18%" }}
-                  ></div>
-                </div>
-              </div>
-              <div className="flex justify-between text-xs text-gray-600 dark:text-slate-400">
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
-                  <span>Green (15%)</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-1"></span>
-                  <span>Blue (67%)</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-gray-800 dark:bg-slate-900 rounded-full mr-1"></span>
-                  <span>Black (18%)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Season 2023/2024 Stats */}
-        {activeTab === "2324" && (
-          <div>
-            <h4 className="text-lg font-medium mb-4 text-gray-800 dark:text-slate-200 flex items-center">
-              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-              Season 2023/2024
-            </h4>
-
-            <div className="mb-6">
-              <div className="flex items-center mb-3">
-                <div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                <h5 className="text-sm font-medium text-gray-700 dark:text-slate-300">
-                  Combined Stats
-                </h5>
-              </div>
-
-              <div className="grid grid-cols-3 gap-5 mb-6">
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    15
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Days Tracked
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    140
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Lifts
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    141
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Trails
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-3 gap-5 mb-6">
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    177.3
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Miles
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    193.7K
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Vert Ft
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    10.9
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Days Total
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6 mb-6">
-              {/* Epic Pass Stats */}
-              <div className="bg-white dark:bg-slate-800 p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
-                <div className="flex items-center mb-3">
-                  <img src={epic} width={50} alt="epic logo"/>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Days Tracked
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      10 days
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Vertical
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      130,600 ft
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Lifts Ridden
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      88 lifts
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Miles
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      94.34 mi
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Highest Elevation
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      12,491 ft
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Most Visited
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      Keystone
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Ikon Pass Stats */}
-              <div className="bg-white dark:bg-slate-800 p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
-                <div className="flex items-center mb-3">
-                  <img src={ikon} width={50} alt="ikon logo"/>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Days Tracked
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      5 days
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Vertical
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      63,135 ft
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Lifts Ridden
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      52 lifts
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Trails
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      141 trails
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Miles
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      83 miles
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Time on Mountain
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      21.6 hours
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Most Visited
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      Arapahoe Basin
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Days Total
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      ~0.9 days
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
-              <p className="text-sm font-medium mb-2 text-gray-700 dark:text-slate-300">
-                Difficulty Breakdown (Ikon)
-              </p>
-              <div className="w-full h-3 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden mb-2">
-                <div className="flex h-full">
-                  <div
-                    className="bg-green-500 h-full"
-                    style={{ width: "42%" }}
-                  ></div>
-                  <div
-                    className="bg-blue-500 h-full"
-                    style={{ width: "38%" }}
-                  ></div>
-                  <div
-                    className="bg-gray-800 dark:bg-slate-900 h-full"
-                    style={{ width: "20%" }}
-                  ></div>
-                </div>
-              </div>
-              <div className="flex justify-between text-xs text-gray-600 dark:text-slate-400">
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
-                  <span>Green (42%)</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-1"></span>
-                  <span>Blue (38%)</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-gray-800 dark:bg-slate-900 rounded-full mr-1"></span>
-                  <span>Black (20%)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Season 2021/2022 Stats */}
-        {activeTab === "2122" && (
-          <div>
-            <h4 className="text-lg font-medium mb-4 text-gray-800 dark:text-slate-200 flex items-center">
-              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-              Season 2021/2022
-            </h4>
-
-            <div className="mb-6">
-              <div className="flex items-center mb-3">
-                <div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                <h5 className="text-sm font-medium text-gray-700 dark:text-slate-300">
-                  Combined Stats
-                </h5>
-              </div>
-
-              <div className="grid grid-cols-3 gap-5 mb-6">
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    10
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Days Tracked
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    78
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Lifts
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    102
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Trails
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-3 gap-5 mb-6">
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    112.8
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Miles
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    124.5K
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Vert Ft
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    6.8
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Days Total
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6 mb-6">
-              {/* Epic Pass Stats */}
-              <div className="bg-white dark:bg-slate-800 p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
-                <div className="flex items-center mb-3">
-                  <img src={epic} width={50} alt="epic logo"/>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Days Tracked
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      6 days
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Vertical
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      82,350 ft
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Lifts Ridden
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      52 lifts
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Miles
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      74.5 mi
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Highest Elevation
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      11,250 ft
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Most Visited
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      Breckenridge
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Ikon Pass Stats */}
-              <div className="bg-white dark:bg-slate-800 p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
-                <div className="flex items-center mb-3">
-                  <img src={ikon} width={50} alt="ikon logo"/>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Days Tracked
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      4 days
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Vertical
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      42,150 ft
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Lifts Ridden
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      26 lifts
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Trails
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      102 trails
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Miles
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      38.3 miles
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Time on Mountain
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      16.2 hours
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Most Visited
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      Winter Park
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Days Total
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      ~0.7 days
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-slate-800 p-4 rounded-lg border border-slate-700">
-              <p className="text-sm font-medium mb-2 text-slate-300">
-                Difficulty Breakdown (Ikon)
-              </p>
-              <div className="w-full h-3 bg-slate-700 rounded-full overflow-hidden mb-2">
-                <div className="flex h-full">
-                  <div
-                    className="bg-green-500 h-full"
-                    style={{ width: "40%" }}
-                  ></div>
-                  <div
-                    className="bg-blue-500 h-full"
-                    style={{ width: "45%" }}
-                  ></div>
-                  <div
-                    className="bg-slate-900 h-full"
-                    style={{ width: "15%" }}
-                  ></div>
-                </div>
-              </div>
-              <div className="flex justify-between text-xs text-slate-400">
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
-                  <span>Green (40%)</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-1"></span>
-                  <span>Blue (45%)</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-slate-900 rounded-full mr-1"></span>
-                  <span>Black (15%)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Season 2022/2023 Stats */}
-        {activeTab === "2223" && (
-          <div>
-            <h4 className="text-lg font-medium mb-4 text-gray-800 dark:text-slate-200 flex items-center">
-              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-              Season 2022/2023
-            </h4>
-
-            <div className="mb-6">
-              <div className="flex items-center mb-3">
-                <div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                <h5 className="text-sm font-medium text-gray-700 dark:text-slate-300">
-                  Combined Stats
-                </h5>
-              </div>
-
-              <div className="grid grid-cols-3 gap-5 mb-6">
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    12
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Days Tracked
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    98
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Lifts
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    127
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Trails
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-3 gap-5 mb-6">
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    156.2
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Miles
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    168.5K
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Vert Ft
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    8.7
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Days Total
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6 mb-6">
-              {/* Epic Pass Stats */}
-              <div className="bg-white dark:bg-slate-800 p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
-                <div className="flex items-center mb-3">
-                  <img src={epic} width={50} alt="epic logo"/>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Days Tracked
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      8 days
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Vertical
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      112,450 ft
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Lifts Ridden
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      72 lifts
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Miles
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      87.6 mi
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Highest Elevation
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      11,250 ft
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Most Visited
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      Breckenridge
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Ikon Pass Stats */}
-              <div className="bg-white dark:bg-slate-800 p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
-                <div className="flex items-center mb-3">
-                  <img src={ikon} width={50} alt="ikon logo"/>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Days Tracked
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      4 days
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Vertical
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      56,050 ft
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Lifts Ridden
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      26 lifts
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Trails
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      127 trails
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Miles
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      68.6 miles
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Time on Mountain
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      18.3 hours
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Most Visited
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      Winter Park
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Days Total
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      ~0.7 days
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
-              <p className="text-sm font-medium mb-2 text-gray-700 dark:text-slate-300">
-                Difficulty Breakdown (Ikon)
-              </p>
-              <div className="w-full h-3 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden mb-2">
-                <div className="flex h-full">
-                  <div
-                    className="bg-green-500 h-full"
-                    style={{ width: "35%" }}
-                  ></div>
-                  <div
-                    className="bg-blue-500 h-full"
-                    style={{ width: "45%" }}
-                  ></div>
-                  <div
-                    className="bg-gray-800 dark:bg-slate-900 h-full"
-                    style={{ width: "20%" }}
-                  ></div>
-                </div>
-              </div>
-              <div className="flex justify-between text-xs text-gray-600 dark:text-slate-400">
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
-                  <span>Green (35%)</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-1"></span>
-                  <span>Blue (45%)</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-gray-800 dark:bg-slate-900 rounded-full mr-1"></span>
-                  <span>Black (20%)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Season 2020/2021 Stats */}
-        {activeTab === "2021" && (
-          <div>
-            <h4 className="text-lg font-medium mb-4 text-gray-800 dark:text-slate-200 flex items-center">
-              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-              Season 2020/2021
-            </h4>
-
-            <div className="mb-6">
-              <div className="flex items-center mb-3">
-                <div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                <h5 className="text-sm font-medium text-gray-700 dark:text-slate-300">
-                  Combined Stats
-                </h5>
-              </div>
-
-              <div className="grid grid-cols-3 gap-5 mb-6">
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    8
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Days Tracked
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    62
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Lifts
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    84
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Trails
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-3 gap-5 mb-6">
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    89.5
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Miles
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    98.3K
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Vert Ft
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    5.2
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Days Total
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6 mb-6">
-              {/* Epic Pass Stats */}
-              <div className="bg-white dark:bg-slate-800 p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
-                <div className="flex items-center mb-3">
-                  <img src={epic} width={50} alt="epic logo"/>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Days Tracked
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      5 days
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Vertical
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      68,450 ft
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Lifts Ridden
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      42 lifts
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Miles
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      62.3 mi
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Highest Elevation
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      10,780 ft
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Most Visited
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      Keystone
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Ikon Pass Stats */}
-              <div className="bg-white dark:bg-slate-800 p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
-                <div className="flex items-center mb-3">
-                  <img src={ikon} width={50} alt="ikon logo"/>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Days Tracked
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      3 days
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Vertical
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      29,850 ft
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Lifts Ridden
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      20 lifts
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Trails
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      84 trails
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Miles
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      27.2 miles
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Time on Mountain
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      12.5 hours
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Most Visited
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      Winter Park
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Days Total
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      ~0.5 days
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
-              <p className="text-sm font-medium mb-2 text-gray-700 dark:text-slate-300">
-                Difficulty Breakdown (Ikon)
-              </p>
-              <div className="w-full h-3 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden mb-2">
-                <div className="flex h-full">
-                  <div
-                    className="bg-green-500 h-full"
-                    style={{ width: "55%" }}
-                  ></div>
-                  <div
-                    className="bg-blue-500 h-full"
-                    style={{ width: "35%" }}
-                  ></div>
-                  <div
-                    className="bg-gray-800 dark:bg-slate-900 h-full"
-                    style={{ width: "10%" }}
-                  ></div>
-                </div>
-              </div>
-              <div className="flex justify-between text-xs text-gray-600 dark:text-slate-400">
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
-                  <span>Green (55%)</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-1"></span>
-                  <span>Blue (35%)</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-gray-800 dark:bg-slate-900 rounded-full mr-1"></span>
-                  <span>Black (10%)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Lifetime Stats */}
-        {activeTab === "lifetime" && (
-          <div>
-            <h4 className="text-lg font-medium mb-4 text-gray-800 dark:text-slate-200 flex items-center">
-              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-              Lifetime Stats
-            </h4>
-
-            <div className="mb-6">
-              <div className="flex items-center mb-3">
-                <div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                <h5 className="text-sm font-medium text-gray-700 dark:text-slate-300">
-                  Combined Stats
-                </h5>
-              </div>
-
-              <div className="grid grid-cols-3 gap-5 mb-6">
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    58
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Days Tracked
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    491
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Lifts
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    690
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Trails
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-3 gap-5 mb-6">
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    657.5
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Miles
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    742.3K
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Vert Ft
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-500 transition-colors shadow-sm">
-                  <p className="text-3xl font-bold text-gray-800 dark:text-white">
-                    34.9
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">
-                    Days Total
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6 mb-6">
-              {/* Epic Pass Stats */}
-              <div className="bg-white dark:bg-slate-800 p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
-                <div className="flex items-center mb-3">
-                  <img src={epic} width={50} alt="epic logo"/>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Days Tracked
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      31 days
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Vertical
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      436,991 ft
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Lifts Ridden
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      282 lifts
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Miles
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      319.3 mi
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Highest Elevation
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      12,998 ft
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Most Visited
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      Breckenridge
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Ikon Pass Stats */}
-              <div className="bg-white dark:bg-slate-800 p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
-                <div className="flex items-center mb-3">
-                    <img src={ikon} width={50} alt="ikon logo"/>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Days Tracked
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      27 days
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Vertical
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      305,335 ft
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Lifts Ridden
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      209 lifts
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Trails
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      690 trails
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-3">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Miles
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      338.2 miles
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Time on Mountain
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      99.6 hours
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Most Visited
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      Winter Park
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                      Days Total
-                    </p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">
-                      ~4.1 days
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
-              <p className="text-sm font-medium mb-2 text-gray-700 dark:text-slate-300">
-                Difficulty Breakdown (Overall)
-              </p>
-              <div className="w-full h-3 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden mb-2">
-                <div className="flex h-full">
-                  <div
-                    className="bg-green-500 h-full"
-                    style={{ width: "32%" }}
-                  ></div>
-                  <div
-                    className="bg-blue-500 h-full"
-                    style={{ width: "48%" }}
-                  ></div>
-                  <div
-                    className="bg-gray-800 dark:bg-slate-900 h-full"
-                    style={{ width: "20%" }}
-                  ></div>
-                </div>
-              </div>
-              <div className="flex justify-between text-xs text-gray-600 dark:text-slate-400">
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
-                  <span>Green (32%)</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-1"></span>
-                  <span>Blue (48%)</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-gray-800 dark:bg-slate-900 rounded-full mr-1"></span>
-                  <span>Black (20%)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+        {/* Season Stats */}
+        {seasonData.map((season) => (
+          activeTab === season.id && (
+            <SeasonStatsCard
+              key={season.id}
+              seasonData={season}
+              logos={{
+                epic: epic,
+                ikon: ikon
+              }}
+            />
+          )
+        ))}
       </div>
     </div>
   );
 };
 
 export default SnowboardingStats;
+
+
+
