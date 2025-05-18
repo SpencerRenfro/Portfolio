@@ -9,12 +9,21 @@ const App = () => {
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
   // Set images as loaded after a short delay to prevent flickering
+  // or after 3 seconds maximum to ensure the app doesn't get stuck on loading
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const minTimer = setTimeout(() => {
       setImagesLoaded(true);
     }, 500);
 
-    return () => clearTimeout(timer);
+    // Fallback timer to ensure we don't get stuck on loading
+    const maxTimer = setTimeout(() => {
+      setImagesLoaded(true);
+    }, 3000);
+
+    return () => {
+      clearTimeout(minTimer);
+      clearTimeout(maxTimer);
+    };
   }, []);
 
   return (

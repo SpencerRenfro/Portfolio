@@ -19,18 +19,21 @@ export const preloadImage = (src) => {
   // Create a new promise for loading the image
   return new Promise((resolve, reject) => {
     const img = new Image();
-    
+
     img.onload = () => {
       // Store in cache and resolve
       imageCache.set(src, img);
       resolve(img);
     };
-    
+
     img.onerror = (error) => {
-      console.error(`Failed to preload image: ${src}`, error);
-      reject(error);
+      console.warn(`Failed to preload image: ${src}`, error);
+      // Still store in cache to prevent repeated attempts
+      imageCache.set(src, null);
+      // Resolve with null instead of rejecting to prevent Promise.all from failing
+      resolve(null);
     };
-    
+
     // Start loading the image
     img.src = src;
   });

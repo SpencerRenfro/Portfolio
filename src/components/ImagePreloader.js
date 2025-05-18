@@ -16,17 +16,17 @@ const ImagePreloader = () => {
       '/images/linkedin.svg',
       '/images/github.svg',
       '/images/email.svg',
-      
+
       // Project images
       '/images/scanner.svg',
       '/images/polytopia.svg',
       '/images/guesthouse.svg',
       '/images/businesscard.svg',
-      
+
       // Flag images
-      '/images/usa-flag.png',
-      '/images/uk-flag.png',
-      '/images/germany-flag.png',
+      '/images/USA_Flag.png',
+      '/images/UK_Flag.png',
+      '/images/German_Flag.png',
     ];
 
     // Add military images
@@ -35,12 +35,12 @@ const ImagePreloader = () => {
       if (militaryInfo.overview && militaryInfo.overview.rankImage) {
         imagesToPreload.push(militaryInfo.overview.rankImage);
       }
-      
+
       // Add AFSC image
       if (militaryInfo.afsc && militaryInfo.afsc.image) {
         imagesToPreload.push(militaryInfo.afsc.image);
       }
-      
+
       // Add ribbon images
       if (militaryInfo.ribbons && militaryInfo.ribbons.length > 0) {
         militaryInfo.ribbons.forEach(ribbon => {
@@ -49,7 +49,7 @@ const ImagePreloader = () => {
           }
         });
       }
-      
+
       // Add assignment flag images
       if (militaryInfo.assignments && militaryInfo.assignments.length > 0) {
         militaryInfo.assignments.forEach(assignment => {
@@ -62,12 +62,14 @@ const ImagePreloader = () => {
 
     // Preload all images
     preloadImages(imagesToPreload)
-      .then(() => {
-        console.log('All images preloaded successfully');
+      .then((results) => {
+        // Count successful loads
+        const successCount = results.filter(img => img !== null).length;
+        console.log(`Preloaded ${successCount}/${imagesToPreload.length} images successfully`);
         setIsLoading(false);
       })
       .catch(error => {
-        console.error('Failed to preload some images', error);
+        console.warn('Error in image preloading process', error);
         setIsLoading(false);
       });
   }, []);
