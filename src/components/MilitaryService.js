@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { militaryInfo } from "../data/militaryData";
 import NavButton from "./ui/NavButton";
+import AFSCEquipment from "./AFSCEquipment";
 
 const MilitaryService = () => {
-  const [activeTab, setActiveTab] = useState("afsc");
+  const [activeTab, setActiveTab] = useState("overview");
 
   return (
     <div>
@@ -14,10 +15,26 @@ const MilitaryService = () => {
 
         {/* Tab Navigation */}
         <div className="flex flex-wrap border-x border-gray-200 dark:border-slate-700">
-          <NavButton label="Overview" active={activeTab === "overview"} onClick={() => setActiveTab("overview")} />
-          <NavButton label="AFSC" active={activeTab === "afsc"} onClick={() => setActiveTab("afsc")} />
-          <NavButton label="Assignments" active={activeTab === "assignments"} onClick={() => setActiveTab("assignments")} />
-          <NavButton label="Professional Development" active={activeTab === "development"} onClick={() => setActiveTab("development")} />
+          <NavButton
+            label="Overview"
+            active={activeTab === "overview"}
+            onClick={() => setActiveTab("overview")}
+          />
+          <NavButton
+            label="AFSC"
+            active={activeTab === "afsc"}
+            onClick={() => setActiveTab("afsc")}
+          />
+          <NavButton
+            label="Assignments"
+            active={activeTab === "assignments"}
+            onClick={() => setActiveTab("assignments")}
+          />
+          <NavButton
+            label="Professional Development"
+            active={activeTab === "development"}
+            onClick={() => setActiveTab("development")}
+          />
         </div>
 
         {/* Tab Content */}
@@ -25,24 +42,39 @@ const MilitaryService = () => {
           {/* AFSC Content */}
           {activeTab === "afsc" && (
             <div>
-              <div className="mb-4">
-                <h3 className="text-lg font-medium text-gray-800 dark:text-white">
-                  {militaryInfo.afsc.title}
-                </h3>
-                <p className="text-blue-600 dark:text-blue-400 font-medium">
-                  {militaryInfo.afsc.code}
-                </p>
+              <div className="flex flex-col md:flex-row gap-6">
+                {/* AFSC Information */}
+                <div className="md:w-1/4 flex justify-center">
+                  <img
+                    src={militaryInfo.afsc.image}
+                    alt={`${militaryInfo.rank} Rank, ${militaryInfo.branch}`}
+                    className="w-32 h-32"
+                  />
+                </div>
+
+                <div className="md:w-3/4">
+                  <h3 className="text-lg font-medium text-gray-800 dark:text-white">
+                    {militaryInfo.afsc.title}
+                  </h3>
+                  <p className="text-blue-600 dark:text-blue-400 font-medium">
+                    {militaryInfo.afsc.code}
+                  </p>
+                  <div className="grid grid-cols-3 col-span-3 md:grid-cols-2 gap-4 mt-4 ">
+                    <div className="col-span-3 md:col-span-2 w-full">
+                      <p className="w-full text-gray-700 dark:text-slate-300 mb-4">
+                        {militaryInfo.afsc.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <p className="text-gray-700 dark:text-slate-300 mb-4">
-                {militaryInfo.afsc.description}
-              </p>
-
-              <div className="mt-4">
-                <h4 className="text-md font-medium text-gray-800 dark:text-white mb-2">
-                  Key Skills
+              {/* Skills */}
+              <div className="mt-8">
+                <h4 className="text-center text-md font-medium text-gray-800 dark:text-white mb-3">
+                  Skills
                 </h4>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 justify-center">
                   {militaryInfo.afsc.skills.map((skill, index) => (
                     <span
                       key={index}
@@ -53,6 +85,11 @@ const MilitaryService = () => {
                   ))}
                 </div>
               </div>
+
+              {/* Equipment Sub-Navigation */}
+              {militaryInfo.afsc.equipment && (
+                <AFSCEquipment equipment={militaryInfo.afsc.equipment} />
+              )}
             </div>
           )}
           {/* Assignments Content */}
@@ -69,9 +106,18 @@ const MilitaryService = () => {
                     className="border-l-4 border-blue-500 pl-4 py-1"
                   >
                     <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-1">
-                      <h4 className="text-md font-medium text-gray-800 dark:text-white">
-                        {assignment.base}
-                      </h4>
+                      <div className="flex items-center gap-3">
+                        {assignment.flag && (
+                          <img
+                            src={assignment.flag}
+                            alt={`${assignment.location} flag`}
+                            className="w-6 h-4 object-cover"
+                          />
+                        )}
+                        <h4 className="text-md font-medium text-gray-800 dark:text-white">
+                          {assignment.base}
+                        </h4>
+                      </div>
                       <span className="text-sm text-gray-500 dark:text-slate-400">
                         {assignment.dates}
                       </span>
@@ -131,7 +177,7 @@ const MilitaryService = () => {
             </div>
           )}
           {activeTab === "overview" && (
-            <div >
+            <div>
               <div className="flex flex-col md:flex-row gap-6">
                 {/* Military Branch Logo */}
                 <div className="md:w-1/4 flex justify-center">

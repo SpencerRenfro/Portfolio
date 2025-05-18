@@ -12,6 +12,37 @@ export const militaryInfo = {
       "Electrical Systems",
       "Technical Documentation",
     ],
+    image: "/images/AGE.png",
+    equipment: [
+      {
+        id: "dash86",
+        name: "-86 Generator",
+        description: "High-output AC generator providing 115/200V 400Hz power to aircraft systems. Essential for powering avionics, radar, and other critical aircraft systems during ground maintenance.",
+        specs: ["115/200V 3-phase AC", "400Hz frequency", "Diesel-powered", "Mobile platform"],
+        maintenance: "Regular maintenance includes fuel system checks, voltage regulation calibration, and load testing to ensure reliable power delivery."
+      },
+      {
+        id: "dash60",
+        name: "-60 Air Conditioner",
+        description: "High-capacity air conditioning unit used to cool aircraft cockpits and electronic bays during ground operations. Prevents overheating of sensitive avionics systems.",
+        specs: ["30-ton cooling capacity", "Adjustable temperature control", "High-volume air delivery", "Diesel-powered"],
+        maintenance: "Maintenance involves refrigerant level checks, compressor inspections, and airflow testing to maintain optimal cooling performance."
+      },
+      {
+        id: "floodlight",
+        name: "Flood Light",
+        description: "Portable high-intensity lighting system used for nighttime maintenance operations and flight line illumination. Provides essential visibility for technical work in low-light conditions.",
+        specs: ["Metal halide lamps", "360° rotation capability", "Extendable mast up to 25 feet", "Diesel generator powered"],
+        maintenance: "Regular maintenance includes lamp replacement, electrical system checks, and mast extension mechanism lubrication."
+      },
+      {
+        id: "muleheater",
+        name: "Mule Heater",
+        description: "Mobile heating unit used to pre-heat aircraft engines and cockpits in cold weather conditions. Ensures proper oil viscosity and prevents component damage during cold starts.",
+        specs: ["High-temperature output", "Flexible ducting system", "Thermostat controlled", "Diesel-fueled"],
+        maintenance: "Maintenance procedures include burner cleaning, heat exchanger inspection, and thermostat calibration to ensure safe and effective heating."
+      }
+    ],
   },
   assignments: [
     {
@@ -21,6 +52,7 @@ export const militaryInfo = {
       role: "Basic Military Training",
       description:
         "Completed 8.5 weeks of intensive basic military training, learning military customs, courtesies, and operational procedures.",
+      flag: "/images/USA_Flag.png"
     },
     {
       base: "Sheppard AFB",
@@ -29,14 +61,26 @@ export const militaryInfo = {
       role: "Technical Training",
       description:
         "Completed technical training for Aerospace Ground Equipment, learning maintenance procedures for various support equipment.",
+      flag: "/images/USA_Flag.png"
     },
+
     {
-      base: "Nellis AFB",
-      location: "Las Vegas, NV",
-      dates: "February 2011 - June 2016",
+      base: "RAF Mildenhall",
+      location: "Mildenhall, England",
+      dates: "June 2016 - August 2018",
       role: "AGE Journeyman",
       description:
-        "Maintained and repaired aerospace ground equipment supporting F-15, F-16, and F-22 aircraft. Performed scheduled inspections and troubleshooting to ensure mission readiness.",
+        "Supported operations for the 100th Air Refueling Wing, known as 'The Bloody Hundredth', maintaining critical ground equipment for KC-135 Stratotankers. The wing's distinctive Square D emblem represents its WWII heritage as the 100th Bombardment Group. Collaborated with RAF personnel on joint maintenance initiatives and supported aerial refueling operations across Europe, Africa, and the Middle East.",
+      flag: "/images/UK_Flag.png"
+    },
+    {
+      base: "Ramstein AB",
+      location: "Ramstein, Germany",
+      dates: "August 2018 - June 2020",
+      role: "AGE Team Lead",
+      description:
+        "Led a team of 6 technicians supporting the 86th Airlift Wing. Coordinated maintenance schedules and ensured equipment readiness for C-130J Super Hercules aircraft operations across Europe and Africa.",
+      flag: "/images/German_Flag.png"
     },
   ],
   professionalDevelopment: [
@@ -77,6 +121,11 @@ export const militaryInfo = {
       name: "Air Force Training",
       image: "/images/Training_Ribbon.png",
       link: "https://www.afpc.af.mil/Fact-Sheets/Display/Article/421945/air-and-space-training-ribbon/",
+    },
+    {
+      name: "Air Force Good Conduct",
+      image: "/images/GoodConduct.png",
+      link: "https://www.afpc.af.mil/Fact-Sheets/Display/Article/421952/air-force-good-conduct-medal/",
     },
   ],
   overview: {
