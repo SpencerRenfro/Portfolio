@@ -6,8 +6,15 @@ const MilitaryService = () => {
     afsc: {
       title: "Aerospace Ground Equipment Journeyman",
       code: "2A6X2",
-      description: "Responsible for maintaining and repairing equipment essential for aircraft operation, including generators, air conditioners, heaters, and hydraulic test stands. Performed scheduled inspections, troubleshooting, and repairs to ensure mission readiness.",
-      skills: ["Equipment Maintenance", "Troubleshooting", "Hydraulic Systems", "Electrical Systems", "Technical Documentation"]
+      description:
+        "Responsible for maintaining and repairing equipment essential for aircraft operation, including generators, air conditioners, heaters, and hydraulic test stands. Performed scheduled inspections, troubleshooting, and repairs to ensure mission readiness.",
+      skills: [
+        "Equipment Maintenance",
+        "Troubleshooting",
+        "Hydraulic Systems",
+        "Electrical Systems",
+        "Technical Documentation",
+      ],
     },
     assignments: [
       {
@@ -15,42 +22,48 @@ const MilitaryService = () => {
         location: "San Antonio, TX",
         dates: "June 2010 - August 2010",
         role: "Basic Military Training",
-        description: "Completed 8.5 weeks of intensive basic military training, learning military customs, courtesies, and operational procedures."
+        description:
+          "Completed 8.5 weeks of intensive basic military training, learning military customs, courtesies, and operational procedures.",
       },
       {
         base: "Sheppard AFB",
         location: "Wichita Falls, TX",
         dates: "August 2010 - February 2011",
         role: "Technical Training",
-        description: "Completed technical training for Aerospace Ground Equipment, learning maintenance procedures for various support equipment."
+        description:
+          "Completed technical training for Aerospace Ground Equipment, learning maintenance procedures for various support equipment.",
       },
       {
         base: "Nellis AFB",
         location: "Las Vegas, NV",
         dates: "February 2011 - June 2016",
         role: "AGE Journeyman",
-        description: "Maintained and repaired aerospace ground equipment supporting F-15, F-16, and F-22 aircraft. Performed scheduled inspections and troubleshooting to ensure mission readiness."
-      }
+        description:
+          "Maintained and repaired aerospace ground equipment supporting F-15, F-16, and F-22 aircraft. Performed scheduled inspections and troubleshooting to ensure mission readiness.",
+      },
     ],
     professionalDevelopment: [
       {
         title: "Airman Leadership School",
         dates: "January 2015 - March 2015",
-        description: "Completed 6-week professional military education course focused on leadership, management, and communication skills.",
-        achievements: ["Distinguished Graduate", "Academic Achievement Award"]
+        description:
+          "Completed 6-week professional military education course focused on leadership, management, and communication skills.",
+        achievements: ["Distinguished Graduate", "Academic Achievement Award"],
       },
       {
         title: "7-Level Technical Training",
         dates: "September 2014 - December 2014",
-        description: "Advanced technical training for AGE craftsman qualification, focusing on complex troubleshooting and repair procedures.",
-        achievements: ["Certified on all AGE equipment"]
+        description:
+          "Advanced technical training for AGE craftsman qualification, focusing on complex troubleshooting and repair procedures.",
+        achievements: ["Certified on all AGE equipment"],
       },
       {
         title: "CCAF Associate Degree",
         dates: "Completed June 2015",
-        description: "Associate of Applied Science in Aerospace Ground Equipment Technology from the Community College of the Air Force.",
-        achievements: ["3.8 GPA"]
-      }
+        description:
+          "Associate of Applied Science in Aerospace Ground Equipment Technology from the Community College of the Air Force.",
+        achievements: ["3.8 GPA"],
+      },
     ],
     ribbons: [
       {
@@ -80,11 +93,24 @@ const MilitaryService = () => {
       <div className="mb-12">
         <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-slate-800 dark:to-slate-900 p-5 border-b border-gray-200 dark:border-slate-700">
           <h2 className="text-2xl mb-2 font-semibold">Military Service</h2>
-          <p className="text-gray-600 dark:text-slate-400 mb-4">{militaryInfo.branch} | {militaryInfo.timeInService}</p>
+          <p className="text-gray-600 dark:text-slate-400 mb-4">
+            {militaryInfo.branch} | {militaryInfo.timeInService}
+          </p>
         </div>
 
         {/* Tab Navigation */}
+
         <div className="flex flex-wrap border-x border-gray-200 dark:border-slate-700">
+          <button
+            onClick={() => setActiveTab("overview")}
+            className={`py-3 px-4 text-sm font-medium border-r border-b border-gray-200 dark:border-slate-700 transition-colors ${
+              activeTab === "afsc"
+                ? "text-blue-600 bg-blue-50 dark:text-white dark:bg-slate-800 border-b-transparent"
+                : "text-gray-600 hover:bg-gray-100 hover:text-blue-600 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white bg-gray-50 dark:bg-slate-900"
+            }`}
+          >
+            Overiview
+          </button>
           <button
             onClick={() => setActiveTab("afsc")}
             className={`py-3 px-4 text-sm font-medium border-r border-b border-gray-200 dark:border-slate-700 transition-colors ${
@@ -140,14 +166,14 @@ const MilitaryService = () => {
                   Key Skills
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  {/* {militaryInfo.afsc.skills.map((skill, index) => (
+                  {militaryInfo.afsc.skills.map((skill, index) => (
                     <span
                       key={index}
                       className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm"
                     >
                       {skill}
                     </span>
-                  ))} */}
+                  ))}
                 </div>
               </div>
             </div>
@@ -161,7 +187,7 @@ const MilitaryService = () => {
               </h3>
 
               <div className="space-y-6">
-                {/* {militaryInfo.assignments.map((assignment, index) => (
+                {militaryInfo.assignments.map((assignment, index) => (
                   <div
                     key={index}
                     className="border-l-4 border-blue-500 pl-4 py-1"
@@ -181,7 +207,7 @@ const MilitaryService = () => {
                       {assignment.description}
                     </p>
                   </div>
-                ))} */}
+                ))}
               </div>
             </div>
           )}
@@ -194,7 +220,7 @@ const MilitaryService = () => {
               </h3>
 
               <div className="space-y-6">
-                {/* {militaryInfo.professionalDevelopment.map((course, index) => (
+                {militaryInfo.professionalDevelopment.map((course, index) => (
                   <div
                     key={index}
                     className="bg-gray-50 dark:bg-slate-900 p-4 rounded-lg border border-gray-200 dark:border-slate-700"
@@ -224,7 +250,7 @@ const MilitaryService = () => {
                       </div>
                     )}
                   </div>
-                ))} */}
+                ))}
               </div>
             </div>
           )}
@@ -266,7 +292,9 @@ const MilitaryService = () => {
                   <p className="text-sm text-gray-500 dark:text-slate-400">
                     AFSC
                   </p>
-                  <p className="font-medium">{militaryInfo.afsc.title} ({militaryInfo.afsc.code})</p>
+                  <p className="font-medium">
+                    {militaryInfo.afsc.title} ({militaryInfo.afsc.code})
+                  </p>
                 </div>
 
                 <div className="md:col-span-2">
@@ -285,7 +313,7 @@ const MilitaryService = () => {
                           <img
                             src={ribbon.image}
                             alt={`${ribbon.name} Ribbon`}
-                            className="w-20 h-8 object-cover transition-transform duration-200 hover:scale-110 border border-gray-200 dark:border-slate-700 shadow-sm"
+                            className="w-20 h-8 object-contain border border-gray-200 dark:border-slate-700 shadow-sm transition-transform duration-200 hover:scale-110"
                           />
                         </a>
                         {/* Tooltip that appears on hover */}
