@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { militaryInfo } from "../data/militaryData";
 import NavButton from "./ui/NavButton";
 import AFSCEquipment from "./AFSCEquipment";
+import PreloadedImage from "./ui/PreloadedImage";
 
 const MilitaryService = () => {
   const [activeTab, setActiveTab] = useState("overview");
@@ -45,7 +46,7 @@ const MilitaryService = () => {
               <div className="flex flex-col md:flex-row gap-6">
                 {/* AFSC Information */}
                 <div className="md:w-1/4 flex justify-center">
-                  <img
+                  <PreloadedImage
                     src={militaryInfo.afsc.image}
                     alt={`${militaryInfo.rank} Rank, ${militaryInfo.branch}`}
                     className="w-32 h-32"
@@ -108,7 +109,7 @@ const MilitaryService = () => {
                     <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-1">
                       <div className="flex items-center gap-3">
                         {assignment.flag && (
-                          <img
+                          <PreloadedImage
                             src={assignment.flag}
                             alt={`${assignment.location} flag`}
                             className="w-6 h-4 object-cover"

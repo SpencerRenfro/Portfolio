@@ -79,8 +79,8 @@ const Home = () => {
 
       {/* Projects Section */}
       <div className="grid grid-cols-12 mx-auto py-2 mb-20">
-        <div className="col-start-3 col-span-8">
-          <h3 className="uppercase text-lg tracking-widest font-medium mb-8">
+        <div className="col-span-12 px-4 md:px-0 md:col-start-3 md:col-span-8">
+          <h3 className="uppercase text-lg tracking-widest font-medium mb-8 text-center md:text-left">
             My Projects
           </h3>
           {projects.map((project, index) => (
@@ -89,26 +89,35 @@ const Home = () => {
               className="card bg-base-100 shadow-lg border border-slate-700 rounded-sm mb-5"
             >
               <div className="card-body p-4">
-                <div className="flex flex-row items-center gap-8 mb-2">
-                  <img className="w-12" src={project.img} alt={`${project.title} Logo`} />
-                  <p className="basis-full text-xl font-medium">{project.title}</p>
-                  <a
-                    className="btn btn-primary text-xs"
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Project
-                  </a>
-                  <a
-                    className="btn btn-outline text-xs"
-                    href={project.gitHubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View on GitHub
-                  </a>
+                {/* Project header and buttons - responsive layout */}
+                <div className="flex flex-col md:flex-row md:items-center md:gap-8 mb-2">
+                  {/* Project title and icon - always in a row */}
+                  <div className="flex items-center gap-4 mb-4 md:mb-0">
+                    <img className="w-12 h-12 flex-shrink-0" src={project.img} alt={`${project.title} Logo`} />
+                    <p className="text-xl font-medium">{project.title}</p>
+                  </div>
+
+                  {/* Buttons - stacked on mobile, side by side on desktop */}
+                  <div className="flex flex-col sm:flex-row gap-2 md:ml-auto">
+                    <a
+                      className="btn btn-primary text-xs py-2 px-4 text-center"
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Project
+                    </a>
+                    <a
+                      className="btn btn-outline text-xs py-2 px-4 text-center"
+                      href={project.gitHubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View on GitHub
+                    </a>
+                  </div>
                 </div>
+
                 {project.description && (
                   <p className="text-slate-400 text-sm mt-2">{project.description}</p>
                 )}
