@@ -143,7 +143,12 @@ const SeasonStatsCard = ({ seasonData, logos }) => {
         {/* Second row of combined stats */}
         <div className="grid grid-cols-3 gap-5 mb-6">
           {renderStatCard(combinedStats.miles, "Miles", false, "🏔️")}
-          {renderStatCard(combinedStats.vertFt, "Vert Ft", true, "⬆️")}
+          {renderStatCard(
+            combinedStats.vertFt, 
+            "Vert Ft", 
+            false, // this boolean determines if the border is blue or not
+            "⬆️"
+          )}
           {renderStatCard(combinedStats.daysTotal, "Days Total", false, "📅")}
         </div>
       </div>
@@ -169,6 +174,9 @@ const SeasonStatsCard = ({ seasonData, logos }) => {
 };
 
 export default SeasonStatsCard;
+
+
+
 
 
 
