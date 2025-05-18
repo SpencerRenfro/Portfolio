@@ -6,12 +6,20 @@ const MilitaryService = () => {
     afsc: "Aerospace Ground Equipment Journeyman",
     ribbons: [
       {
+        name: "National Defense Service Medal",
+        image: "/images/National_Defense.png",
+        link: "https://www.afpc.af.mil/Fact-Sheets/Display/Article/421890/national-defense-service-medal/"
+      },
+      {
         name: "Global War on Terrorism",
         image: "/images/GlobalWar.png",
+        link: "https://www.afpc.af.mil/Fact-Sheets/Display/Article/421912/global-war-on-terrorism-service-medal/"
       },
-      // Add more ribbons as needed:
-      // { name: "Air Force Good Conduct Medal", image: "/images/GoodConduct.png" },
-      // { name: "National Defense Service Medal", image: "/images/NationalDefense.png" }
+      {
+        name: "Air Force Training",
+        image: "/images/Training_Ribbon.png",
+        link: "https://www.afpc.af.mil/Fact-Sheets/Display/Article/421945/air-and-space-training-ribbon/"
+      }
     ],
     timeInService: "6 years",
     branch: "U.S. Air Force",
@@ -23,7 +31,7 @@ const MilitaryService = () => {
         <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-slate-800 dark:to-slate-900 p-5 border-b border-gray-200 dark:border-slate-700">
           <h2 className="text-2xl mb-6 font-semibold">Military Service</h2>
         </div>
-        <div className="bg-white dark:bg-slate-800 p-6 rounded-lg border border-gray-200 dark:border-slate-700 shadow-md">
+        <div className="bg-white dark:bg-slate-800 p-6 rounded-bottom-lg border border-gray-200 dark:border-slate-700 shadow-md">
           <div className="flex flex-col md:flex-row gap-6">
             {/* Military Branch Logo */}
             <div className="md:w-1/4 flex justify-center">
@@ -66,18 +74,30 @@ const MilitaryService = () => {
                   <p className="text-sm text-gray-500 dark:text-slate-400">
                     Ribbons & Awards
                   </p>
-                  <ul className="list-disc ml-5 mt-1">
+                  <div className="list-disc ml-5 mt-1 flex">
                     {militaryInfo.ribbons.map((ribbon, index) => (
-                      <div key={index} className="flex items-center mb-2">
-                        <img
-                          src={ribbon.image}
-                          alt={`${ribbon.name} Ribbon`}
-                          className="w-16 h-16 mr-3"
-                        />
-                        <p className="font-medium">{ribbon.name}</p>
+                      <div key={index} className="relative group mb-2">
+                        <a
+                          href={ribbon.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block"
+                        >
+                          <img
+                            src={ribbon.image}
+                            alt={`${ribbon.name} Ribbon`}
+                            className="w-16 h-16 mr-3 cursor-pointer transition-transform duration-200 hover:scale-110"
+                          />
+                        </a>
+                        {/* Tooltip that appears on hover */}
+                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-800 dark:bg-slate-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none z-10 shadow-lg">
+                          {ribbon.name}
+                          {/* Arrow pointing down */}
+                          <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-800 dark:border-t-slate-700"></div>
+                        </div>
                       </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               </div>
 
