@@ -9,111 +9,39 @@ const SnowboardingStats = () => {
   // Create an array of season data objects
   const seasonData = [
     {
-      id: "2425",
-      seasonName: "2024/2025",
+      id: "2021",
+      seasonName: "2020/2021",
       combinedStats: {
-        daysTracked: "13",
-        lifts: "113",
-        trails: "236",
-        miles: "121.67",
-        vertFt: "157.2K",
-        daysTotal: "3.3"
+        daysTracked: "36",
+        lifts: "215",
+        trails: "187",
+        miles: "324.6",
+        vertFt: "505.4K",
+        daysTotal: "15.8"
       },
       epicStats: {
-        daysTracked: "2 days",
-        vertical: "43,241 ft",
-        liftsRidden: "28 lifts",
-        miles: "0.67 mi",
-        highestElevation: "8,657 ft",
-        timeOnMountain: "2 days"
-      },
-      ikonStats: {
-        daysTracked: "11 days",
-        vertical: "114,000 ft",
-        liftsRidden: "85 lifts",
-        trails: "236 trails",
-        miles: "121 miles",
-        timeOnMountain: "31.0 hours (~1.3 days)",
-        mostVisited: "Winter Park",
-        lastDay: "April 13th, 2025"
-      },
-      difficulty: {
-        title: "Difficulty Breakdown (Ikon)",
-        green: 15,
-        blue: 67,
-        black: 18
-      }
-    },
-    {
-      id: "2324",
-      seasonName: "2023/2024",
-      combinedStats: {
-        daysTracked: "15",
-        lifts: "140",
-        trails: "141",
-        miles: "177.3",
-        vertFt: "193.7K",
-        daysTotal: "10.9"
-      },
-      epicStats: {
-        daysTracked: "10 days",
-        vertical: "130,600 ft",
-        liftsRidden: "88 lifts",
-        miles: "94.34 mi",
-        highestElevation: "12,491 ft",
-        mostVisited: "Keystone"
+        daysTracked: "31 days",
+        vertical: "436,991 ft",
+        liftsRidden: "183 lifts",
+        miles: "278.2 mi",
+        highestElevation: "12,998 ft",
+        mostVisited: "Breckenridge"
       },
       ikonStats: {
         daysTracked: "5 days",
-        vertical: "63,135 ft",
-        liftsRidden: "52 lifts",
-        trails: "141 trails",
-        miles: "83 miles",
-        timeOnMountain: "21.6 hours",
-        mostVisited: "Arapahoe Basin",
+        vertical: "68,450 ft",
+        liftsRidden: "32 lifts",
+        trails: "187 trails",
+        miles: "46.4 miles",
+        timeOnMountain: "22.5 hours",
+        mostVisited: "Winter Park",
         daysTotal: "~0.9 days"
       },
       difficulty: {
         title: "Difficulty Breakdown (Ikon)",
-        green: 42,
-        blue: 38,
-        black: 20
-      }
-    },
-    {
-      id: "2223",
-      seasonName: "2022/2023",
-      combinedStats: {
-        daysTracked: "12",
-        lifts: "98",
-        trails: "112",
-        miles: "143.5",
-        vertFt: "168.2K",
-        daysTotal: "8.7"
-      },
-      epicStats: {
-        daysTracked: "8 days",
-        vertical: "112,450 ft",
-        liftsRidden: "67 lifts",
-        miles: "89.3 mi",
-        highestElevation: "11,250 ft",
-        mostVisited: "Breckenridge"
-      },
-      ikonStats: {
-        daysTracked: "4 days",
-        vertical: "55,750 ft",
-        liftsRidden: "31 lifts",
-        trails: "112 trails",
-        miles: "54.2 miles",
-        timeOnMountain: "18.4 hours",
-        mostVisited: "Winter Park",
-        daysTotal: "~0.8 days"
-      },
-      difficulty: {
-        title: "Difficulty Breakdown (Ikon)",
-        green: 35,
+        green: 40,
         blue: 45,
-        black: 20
+        black: 15
       }
     },
     {
@@ -153,39 +81,111 @@ const SnowboardingStats = () => {
       }
     },
     {
-      id: "2021",
-      seasonName: "2020/2021",
+      id: "2223",
+      seasonName: "2022/2023",
       combinedStats: {
-        daysTracked: "36",
-        lifts: "215",
-        trails: "187",
-        miles: "324.6",
-        vertFt: "505.4K",
-        daysTotal: "15.8"
+        daysTracked: "12",
+        lifts: "98",
+        trails: "112",
+        miles: "143.5",
+        vertFt: "168.2K",
+        daysTotal: "8.7"
       },
       epicStats: {
-        daysTracked: "31 days",
-        vertical: "436,991 ft",
-        liftsRidden: "183 lifts",
-        miles: "278.2 mi",
-        highestElevation: "12,998 ft",
+        daysTracked: "8 days",
+        vertical: "112,450 ft",
+        liftsRidden: "67 lifts",
+        miles: "89.3 mi",
+        highestElevation: "11,250 ft",
         mostVisited: "Breckenridge"
       },
       ikonStats: {
-        daysTracked: "5 days",
-        vertical: "68,450 ft",
-        liftsRidden: "32 lifts",
-        trails: "187 trails",
-        miles: "46.4 miles",
-        timeOnMountain: "22.5 hours",
+        daysTracked: "4 days",
+        vertical: "55,750 ft",
+        liftsRidden: "31 lifts",
+        trails: "112 trails",
+        miles: "54.2 miles",
+        timeOnMountain: "18.4 hours",
         mostVisited: "Winter Park",
+        daysTotal: "~0.8 days"
+      },
+      difficulty: {
+        title: "Difficulty Breakdown (Ikon)",
+        green: 35,
+        blue: 45,
+        black: 20
+      }
+    },
+    {
+      id: "2324",
+      seasonName: "2023/2024",
+      combinedStats: {
+        daysTracked: "15",
+        lifts: "140",
+        trails: "141",
+        miles: "177.3",
+        vertFt: "193.7K",
+        daysTotal: "10.9"
+      },
+      epicStats: {
+        daysTracked: "10 days",
+        vertical: "130,600 ft",
+        liftsRidden: "88 lifts",
+        miles: "94.34 mi",
+        highestElevation: "12,491 ft",
+        mostVisited: "Keystone"
+      },
+      ikonStats: {
+        daysTracked: "5 days",
+        vertical: "63,135 ft",
+        liftsRidden: "52 lifts",
+        trails: "141 trails",
+        miles: "83 miles",
+        timeOnMountain: "21.6 hours",
+        mostVisited: "Arapahoe Basin",
         daysTotal: "~0.9 days"
       },
       difficulty: {
         title: "Difficulty Breakdown (Ikon)",
-        green: 40,
-        blue: 45,
-        black: 15
+        green: 42,
+        blue: 38,
+        black: 20
+      }
+    },
+    {
+      id: "2425",
+      seasonName: "2024/2025",
+      combinedStats: {
+        daysTracked: "13",
+        lifts: "113",
+        trails: "236",
+        miles: "121.67",
+        vertFt: "157.2K",
+        daysTotal: "3.3"
+      },
+      epicStats: {
+        daysTracked: "2 days",
+        vertical: "43,241 ft",
+        liftsRidden: "28 lifts",
+        miles: "0.67 mi",
+        highestElevation: "8,657 ft",
+        timeOnMountain: "2 days"
+      },
+      ikonStats: {
+        daysTracked: "11 days",
+        vertical: "114,000 ft",
+        liftsRidden: "85 lifts",
+        trails: "236 trails",
+        miles: "121 miles",
+        timeOnMountain: "31.0 hours (~1.3 days)",
+        mostVisited: "Winter Park",
+        lastDay: "April 13th, 2025"
+      },
+      difficulty: {
+        title: "Difficulty Breakdown (Ikon)",
+        green: 15,
+        blue: 67,
+        black: 18
       }
     },
     {
@@ -254,7 +254,7 @@ const SnowboardingStats = () => {
         ))}
       </div>
 
-      <div className="p-6 bg-white dark:bg-slate-900">
+      <div className="p-4 sm:p-6 bg-white dark:bg-slate-900">
         {/* Season Stats */}
         {seasonData.map((season) => (
           activeTab === season.id && (

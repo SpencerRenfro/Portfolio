@@ -16,14 +16,14 @@ const SeasonStatsCard = ({ seasonData, logos }) => {
 
   // Render a stat card
   const renderStatCard = (value, label, highlight = false, icon = null) => (
-    <div className={`bg-white dark:bg-slate-800 p-4 rounded-lg border ${highlight ? 'border-blue-500' : 'border-gray-200 dark:border-slate-700'} hover:border-blue-500 transition-colors shadow-sm`}>
+    <div className={`bg-white dark:bg-slate-800 p-3 sm:p-4 rounded-lg border ${highlight ? 'border-blue-500' : 'border-gray-200 dark:border-slate-700'} hover:border-blue-500 transition-colors shadow-sm`}>
       <div className="flex items-center">
         {icon && (
           typeof icon === 'string' ?
-            <span className="mr-2">{icon}</span> :
-            <img src={icon} alt={label} className="w-6 h-6 mr-2" />
+            <span className="mr-2 text-base sm:text-lg">{icon}</span> :
+            <img src={icon} alt={label} className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
         )}
-        <p className="text-3xl font-bold text-gray-800 dark:text-white">{value}</p>
+        <p className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 dark:text-white">{value}</p>
       </div>
       <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400 mt-1">{label}</p>
     </div>
@@ -31,52 +31,56 @@ const SeasonStatsCard = ({ seasonData, logos }) => {
 
   // Render a pass stats section
   const renderPassStats = (passType, stats, logoSrc) => (
-    <div className="bg-white dark:bg-slate-800 p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
+    <div className="bg-white dark:bg-slate-800 p-4 sm:p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
       <div className="flex items-center mb-3">
-        <img src={logoSrc} width={50} alt={`${passType} logo`} />
+        <img
+          src={logoSrc}
+          alt={`${passType} logo`}
+          className="w-auto h-10 sm:h-12 object-contain"
+        />
       </div>
 
-      <div className="grid grid-cols-2 gap-4 mb-3">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-3">
         <div>
           <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Days Tracked</p>
-          <p className="text-lg font-semibold text-gray-800 dark:text-white">{stats.daysTracked}</p>
+          <p className="text-base sm:text-lg font-semibold text-gray-800 dark:text-white">{stats.daysTracked}</p>
         </div>
         <div>
           <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Vertical</p>
-          <p className="text-lg font-semibold text-gray-800 dark:text-white">{stats.vertical}</p>
+          <p className="text-base sm:text-lg font-semibold text-gray-800 dark:text-white">{stats.vertical}</p>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 mb-3">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-3">
         <div>
           <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Lifts Ridden</p>
-          <p className="text-lg font-semibold text-gray-800 dark:text-white">{stats.liftsRidden}</p>
+          <p className="text-base sm:text-lg font-semibold text-gray-800 dark:text-white">{stats.liftsRidden}</p>
         </div>
         <div>
           <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">{stats.trails ? 'Trails' : 'Miles'}</p>
-          <p className="text-lg font-semibold text-gray-800 dark:text-white">{stats.trails || stats.miles}</p>
+          <p className="text-base sm:text-lg font-semibold text-gray-800 dark:text-white">{stats.trails || stats.miles}</p>
         </div>
       </div>
 
       {stats.timeOnMountain && (
-        <div className="grid grid-cols-2 gap-4 mb-3">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-3">
           <div>
             <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Miles</p>
-            <p className="text-lg font-semibold text-gray-800 dark:text-white">{stats.miles}</p>
+            <p className="text-base sm:text-lg font-semibold text-gray-800 dark:text-white">{stats.miles}</p>
           </div>
           <div>
             <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">Time on Mountain</p>
-            <p className="text-lg font-semibold text-gray-800 dark:text-white">{stats.timeOnMountain}</p>
+            <p className="text-base sm:text-lg font-semibold text-gray-800 dark:text-white">{stats.timeOnMountain}</p>
           </div>
         </div>
       )}
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4">
         <div>
           <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
             {stats.highestElevation ? 'Highest Elevation' : 'Most Visited'}
           </p>
-          <p className="text-lg font-semibold text-gray-800 dark:text-white">
+          <p className="text-base sm:text-lg font-semibold text-gray-800 dark:text-white text-ellipsis overflow-hidden">
             {stats.highestElevation || stats.mostVisited}
           </p>
         </div>
@@ -84,7 +88,7 @@ const SeasonStatsCard = ({ seasonData, logos }) => {
           <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
             {stats.lastDay ? 'Last Day' : (stats.daysTotal ? 'Days Total' : 'Most Visited')}
           </p>
-          <p className="text-lg font-semibold text-gray-800 dark:text-white">
+          <p className="text-base sm:text-lg font-semibold text-gray-800 dark:text-white text-ellipsis overflow-hidden">
             {stats.lastDay || stats.daysTotal || stats.mostVisited}
           </p>
         </div>
@@ -94,7 +98,7 @@ const SeasonStatsCard = ({ seasonData, logos }) => {
 
   // Render difficulty breakdown
   const renderDifficultyBreakdown = (title, green, blue, black) => (
-    <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
+    <div className="bg-white dark:bg-slate-800 p-3 sm:p-4 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
       <p className="text-sm font-medium mb-2 text-gray-700 dark:text-slate-300">{title}</p>
       <div className="w-full h-3 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden mb-2">
         <div className="flex h-full">
@@ -103,7 +107,8 @@ const SeasonStatsCard = ({ seasonData, logos }) => {
           <div className="bg-gray-800 dark:bg-slate-900 h-full" style={{ width: `${black}%` }}></div>
         </div>
       </div>
-      <div className="flex justify-between text-xs text-gray-600 dark:text-slate-400">
+      {/* Mobile-friendly layout for difficulty breakdown */}
+      <div className="flex flex-col sm:flex-row sm:justify-between text-xs text-gray-600 dark:text-slate-400 gap-2 sm:gap-0">
         <div className="flex items-center">
           <span className="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
           <span>Green ({green}%)</span>
@@ -122,30 +127,29 @@ const SeasonStatsCard = ({ seasonData, logos }) => {
 
   return (
     <div>
-      <h4 className="text-lg font-medium mb-4 text-gray-800 dark:text-slate-200 flex items-center">
+      <h4 className="text-base sm:text-lg font-medium mb-4 text-gray-800 dark:text-slate-200 flex items-center">
         <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
         Season {seasonName}
       </h4>
 
-      <div className="mb-6">
-        <div className="flex items-center mb-3">
+      <div className="mb-4 sm:mb-6">
+        <div className="flex items-center mb-2 sm:mb-3">
           <div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
           <h5 className="text-sm font-medium text-gray-700 dark:text-slate-300">Combined Stats</h5>
         </div>
 
-        {/* First row of combined stats */}
-        <div className="grid grid-cols-3 gap-5 mb-6">
+        {/* Combined stats - responsive grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-5 mb-6">
           {renderStatCard(combinedStats.daysTracked, "Days Tracked", false, "📅")}
           {renderStatCard(combinedStats.lifts, "Lifts", false, "🚠")}
           {renderStatCard(combinedStats.trails, "Trails", false, "⛷️")}
         </div>
 
-        {/* Second row of combined stats */}
-        <div className="grid grid-cols-3 gap-5 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-5 mb-6">
           {renderStatCard(combinedStats.miles, "Miles", false, "🏔️")}
           {renderStatCard(
-            combinedStats.vertFt, 
-            "Vert Ft", 
+            combinedStats.vertFt,
+            "Vert Ft",
             false, // this boolean determines if the border is blue or not
             "⬆️"
           )}
@@ -153,8 +157,8 @@ const SeasonStatsCard = ({ seasonData, logos }) => {
         </div>
       </div>
 
-      {/* Pass Stats */}
-      <div className="grid grid-cols-2 gap-6 mb-6">
+      {/* Pass Stats - Stacked on mobile, side by side on tablet+ */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         {/* Epic Pass Stats */}
         {renderPassStats("Epic", epicStats, logos.epic)}
 
