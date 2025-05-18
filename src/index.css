@@ -24,3 +24,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Add this to your CSS to hide DocuSign button */
+.fs-link.fs-sign-link, .fs-link,
+#fs-sign-button, #fs-edit-link {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+

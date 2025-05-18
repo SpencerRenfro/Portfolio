@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import ikon from "../assets/ikon_pngKey.png";
-import epic from "../assets/epic_pngKey.png";
+
 // Import reusable component
 import SeasonStatsCard from "./snowboarding/SeasonStatsCard";
 
@@ -263,8 +262,8 @@ const SnowboardingStats = () => {
               key={season.id}
               seasonData={season}
               logos={{
-                epic: epic,
-                ikon: ikon
+                epic: "../images/epic.png",
+                ikon: "../images/ikon.png"
               }}
             />
           )

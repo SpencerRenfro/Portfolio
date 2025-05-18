@@ -1,5 +1,4 @@
-import React from "react";
-import Navigation from "./Navigation";
+
 
 const Home = () => {
   const projects = [
@@ -35,9 +34,6 @@ const Home = () => {
 
   return (
     <div>
-      {/* Navigation */}
-      <Navigation />
-
       {/* Header Section */}
       <div className="grid grid-cols-12 px-10 pt-10 mb-20">
         <div className="col-span-12 lg:col-start-3 lg:col-span-8 text-center">
