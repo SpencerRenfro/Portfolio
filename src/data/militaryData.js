@@ -19,28 +19,32 @@ export const militaryInfo = {
         name: "-86 Generator",
         description: "High-output AC generator providing 115/200V 400Hz power to aircraft systems. Essential for powering avionics, radar, and other critical aircraft systems during ground maintenance.",
         specs: ["115/200V 3-phase AC", "400Hz frequency", "Diesel-powered", "Mobile platform"],
-        maintenance: "Regular maintenance includes fuel system checks, voltage regulation calibration, and load testing to ensure reliable power delivery."
+        maintenance: "Regular maintenance includes fuel system checks, voltage regulation calibration, and load testing to ensure reliable power delivery.",
+        image: "/images/-86.png"
       },
       {
         id: "dash60",
-        name: "-60 Air Conditioner",
+        name: "-60 Turbine Gernator",
         description: "High-capacity air conditioning unit used to cool aircraft cockpits and electronic bays during ground operations. Prevents overheating of sensitive avionics systems.",
         specs: ["30-ton cooling capacity", "Adjustable temperature control", "High-volume air delivery", "Diesel-powered"],
-        maintenance: "Maintenance involves refrigerant level checks, compressor inspections, and airflow testing to maintain optimal cooling performance."
+        maintenance: "Maintenance involves refrigerant level checks, compressor inspections, and airflow testing to maintain optimal cooling performance.",
+        image: "/images/-60.png"
       },
       {
         id: "floodlight",
         name: "Flood Light",
         description: "Portable high-intensity lighting system used for nighttime maintenance operations and flight line illumination. Provides essential visibility for technical work in low-light conditions.",
         specs: ["Metal halide lamps", "360° rotation capability", "Extendable mast up to 25 feet", "Diesel generator powered"],
-        maintenance: "Regular maintenance includes lamp replacement, electrical system checks, and mast extension mechanism lubrication."
+        maintenance: "Regular maintenance includes lamp replacement, electrical system checks, and mast extension mechanism lubrication.",
+        image: "/images/flood-light.svg"
       },
       {
         id: "muleheater",
         name: "Mule Heater",
         description: "Mobile heating unit used to pre-heat aircraft engines and cockpits in cold weather conditions. Ensures proper oil viscosity and prevents component damage during cold starts.",
         specs: ["High-temperature output", "Flexible ducting system", "Thermostat controlled", "Diesel-fueled"],
-        maintenance: "Maintenance procedures include burner cleaning, heat exchanger inspection, and thermostat calibration to ensure safe and effective heating."
+        maintenance: "Maintenance procedures include burner cleaning, heat exchanger inspection, and thermostat calibration to ensure safe and effective heating.",
+        image: "/images/mule-heater.svg"
       }
     ],
   },
@@ -48,35 +52,35 @@ export const militaryInfo = {
     {
       base: "Lackland AFB",
       location: "San Antonio, TX",
-      dates: "June 2010 - August 2010",
+      dates: "January 2014 - March 2014",
       role: "Basic Military Training",
       description:
         "Completed 8.5 weeks of intensive basic military training, learning military customs, courtesies, and operational procedures.",
-      flag: "/images/USA_Flag.png"
+      flag: "/images/USA.svg"
     },
     {
       base: "Sheppard AFB",
       location: "Wichita Falls, TX",
-      dates: "August 2010 - February 2011",
+      dates: "March 2014 - July 2014",
       role: "Technical Training",
       description:
         "Completed technical training for Aerospace Ground Equipment, learning maintenance procedures for various support equipment.",
-      flag: "/images/USA_Flag.png"
+      flag: "/images/USA.svg"
     },
 
     {
       base: "RAF Mildenhall",
       location: "Mildenhall, England",
-      dates: "June 2016 - August 2018",
+      dates: "July 2014 - August 2016",
       role: "AGE Journeyman",
       description:
         "Supported operations for the 100th Air Refueling Wing, known as 'The Bloody Hundredth', maintaining critical ground equipment for KC-135 Stratotankers. The wing's distinctive Square D emblem represents its WWII heritage as the 100th Bombardment Group. Collaborated with RAF personnel on joint maintenance initiatives and supported aerial refueling operations across Europe, Africa, and the Middle East.",
-      flag: "/images/UK_Flag.png"
+      flag: "/images/England.svg"
     },
     {
       base: "Ramstein AB",
       location: "Ramstein, Germany",
-      dates: "August 2018 - June 2020",
+      dates: "August 2016 - September 2019",
       role: "AGE Team Lead",
       description:
         "Led a team of 6 technicians supporting the 86th Airlift Wing. Coordinated maintenance schedules and ensured equipment readiness for C-130J Super Hercules aircraft operations across Europe and Africa.",
@@ -92,18 +96,18 @@ export const militaryInfo = {
       achievements: ["Distinguished Graduate", "Academic Achievement Award"],
     },
     {
-      title: "7-Level Technical Training",
-      dates: "September 2014 - December 2014",
+      title: "5-Level Technical Training",
+      dates: "July 2014 - July 2015",
       description:
         "Advanced technical training for AGE craftsman qualification, focusing on complex troubleshooting and repair procedures.",
       achievements: ["Certified on all AGE equipment"],
     },
     {
       title: "CCAF Associate Degree",
-      dates: "Completed June 2015",
+      dates: "Completed January 2019",
       description:
         "Associate of Applied Science in Aerospace Ground Equipment Technology from the Community College of the Air Force.",
-      achievements: ["3.8 GPA"],
+      achievements: ["3.0 GPA"],
     },
   ],
   ribbons: [

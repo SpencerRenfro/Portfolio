@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Base/Frame -->
+  <rect x="15" y="60" width="70" height="25" rx="2" fill="#4a4a4a" stroke="#333" stroke-width="1"/>
+  
+  <!-- Wheels -->
+  <circle cx="25" cy="85" r="6" fill="#333" stroke="#222" stroke-width="1"/>
+  <circle cx="75" cy="85" r="6" fill="#333" stroke="#222" stroke-width="1"/>
+  
+  <!-- Heater Body -->
+  <rect x="20" y="30" width="60" height="30" rx="3" fill="#e67e22" stroke="#d35400" stroke-width="1"/>
+  
+  <!-- Fuel Tank -->
+  <rect x="25" y="50" width="50" height="10" rx="2" fill="#7f8c8d" stroke="#636e72" stroke-width="1"/>
+  
+  <!-- Control Panel -->
+  <rect x="25" y="35" width="50" height="10" rx="2" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1"/>
+  
+  <!-- Temperature Gauge -->
+  <circle cx="35" cy="40" r="4" fill="#fff" stroke="#333" stroke-width="1"/>
+  <path d="M35,40 L38,38" stroke="#e74c3c" stroke-width="1"/>
+  <path d="M32,37 L38,43 M32,43 L38,37" stroke="#e74c3c" stroke-width="0.5" fill="none"/>
+  
+  <!-- Controls -->
+  <circle cx="50" cy="40" r="3" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <circle cx="65" cy="40" r="3" fill="#e74c3c" stroke="#c0392b" stroke-width="1"/>
+  
+  <!-- Heating Duct -->
+  <path d="M80,40 C90,40 95,30 95,20" stroke="#7f8c8d" stroke-width="6" fill="none"/>
+  <circle cx="95" cy="20" r="5" fill="#7f8c8d" stroke="#636e72" stroke-width="1"/>
+  
+  <!-- Heat Waves -->
+  <path d="M95,15 C92,12 98,12 95,9 C92,6 98,6 95,3" stroke="#e74c3c" stroke-width="1" fill="none" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="3s" repeatCount="indefinite"/>
+  </path>
+  <path d="M90,15 C87,12 93,12 90,9 C87,6 93,6 90,3" stroke="#e74c3c" stroke-width="1" fill="none" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.2;0.5" dur="3s" repeatCount="indefinite" begin="1s"/>
+  </path>
+  <path d="M100,15 C97,12 103,12 100,9 C97,6 103,6 100,3" stroke="#e74c3c" stroke-width="1" fill="none" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.2;0.5" dur="3s" repeatCount="indefinite" begin="2s"/>
+  </path>
+  
+  <!-- Exhaust Pipe -->
+  <rect x="25" y="20" width="8" height="10" rx="2" fill="#7f8c8d" stroke="#636e72" stroke-width="1"/>
+  <ellipse cx="29" cy="20" rx="4" ry="2" fill="#7f8c8d" stroke="#636e72" stroke-width="1"/>
+  
+  <!-- Label -->
+  <text x="30" y="75" font-family="Arial" font-size="8" font-weight="bold" fill="white">MULE HEATER</text>
+</svg>

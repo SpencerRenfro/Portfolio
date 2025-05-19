@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PreloadedImage from "./ui/PreloadedImage";
 
 const AFSCEquipment = ({ equipment }) => {
   const [activeEquipment, setActiveEquipment] = useState(equipment[0].id);
@@ -28,31 +29,47 @@ const AFSCEquipment = ({ equipment }) => {
       {equipment.map((item) => (
         activeEquipment === item.id && (
           <div key={item.id} className="bg-gray-50 dark:bg-slate-900 p-4 rounded-lg border border-gray-200 dark:border-slate-700">
-            <h5 className="text-lg font-medium text-gray-800 dark:text-white mb-2">
-              {item.name}
-            </h5>
-            <p className="text-gray-700 dark:text-slate-300 mb-4">
-              {item.description}
-            </p>
-            
-            <div className="mb-3">
-              <h6 className="text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">
-                Specifications
-              </h6>
-              <ul className="list-disc list-inside text-gray-700 dark:text-slate-300">
-                {item.specs.map((spec, i) => (
-                  <li key={i}>{spec}</li>
-                ))}
-              </ul>
-            </div>
-            
-            <div>
-              <h6 className="text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">
-                Maintenance
-              </h6>
-              <p className="text-gray-700 dark:text-slate-300">
-                {item.maintenance}
-              </p>
+            <div className="flex flex-col md:flex-row gap-6">
+              {/* Equipment Image */}
+              {item.image && (
+                <div className="md:w-1/3 flex justify-center items-start">
+                  <PreloadedImage
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full max-w-[200px] h-auto object-contain"
+                  />
+                </div>
+              )}
+
+              {/* Equipment Details */}
+              <div className={item.image ? "md:w-2/3" : "w-full"}>
+                <h5 className="text-lg font-medium text-gray-800 dark:text-white mb-2">
+                  {item.name}
+                </h5>
+                <p className="text-gray-700 dark:text-slate-300 mb-4">
+                  {item.description}
+                </p>
+
+                <div className="mb-3">
+                  <h6 className="text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">
+                    Specifications
+                  </h6>
+                  <ul className="list-disc list-inside text-gray-700 dark:text-slate-300">
+                    {item.specs.map((spec, i) => (
+                      <li key={i}>{spec}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h6 className="text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">
+                    Maintenance
+                  </h6>
+                  <p className="text-gray-700 dark:text-slate-300">
+                    {item.maintenance}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         )

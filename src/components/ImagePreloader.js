@@ -27,6 +27,12 @@ const ImagePreloader = () => {
       '/images/USA_Flag.png',
       '/images/UK_Flag.png',
       '/images/German_Flag.png',
+
+      // Equipment images
+      '/images/generator-86.svg',
+      '/images/air-conditioner-60.svg',
+      '/images/flood-light.svg',
+      '/images/mule-heater.svg',
     ];
 
     // Add military images
