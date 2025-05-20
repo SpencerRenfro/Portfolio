@@ -109,7 +109,7 @@ export const militaryInfo = {
   professionalDevelopment: [
     {
       title: "Airman Leadership School",
-      dates: "January 2015 - March 2015",
+      dates: "January 2018 - March 2018",
       description:
         "Completed 6-week professional military education course focused on leadership, management, and communication skills.",
       achievements: ["Distinguished Graduate", "Academic Achievement Award"],
