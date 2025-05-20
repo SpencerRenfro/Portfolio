@@ -4,30 +4,30 @@ const Home = () => {
   const projects = [
     {
       title: "Scanner App",
-      link: "https://scanner-app.example.com/",
-      gitHubLink: "https://github.com/SpencerwRenfro/scanner-app",
-      img: "/images/scanner.svg",
+      link: "",
+      gitHubLink: "https://github.com/SpencerRenfro/Scanner_App",
+      img: "/images/barcode.png",
       description: "A mobile-friendly app for scanning and organizing documents with OCR capabilities."
     },
     {
       title: "Polytopia Calculator",
-      link: "http://mypolytopia.s3-website.us-east-2.amazonaws.com/",
-      gitHubLink: "https://github.com/SpencerwRenfro/React-Polytopia",
-      img: "/images/polytopia.svg",
+      link: "https://mypolytopiacalculator.com/",
+      gitHubLink: "https://github.com/SpencerRenfro/React_Polytopia",
+      img: "/images/polytopia.png",
       description: "A strategic calculator tool for the popular mobile game Polytopia, helping players optimize their gameplay."
     },
     {
       title: "Guest House Counseling",
       link: "http://mypolytopia.s3-website.us-east-2.amazonaws.com/",
       gitHubLink: "https://github.com/SpencerwRenfro/React-Polytopia",
-      img: "/images/guesthouse.svg",
+      img: "/images/guesthouse.png",
       description: "A responsive website for a counseling practice, featuring appointment scheduling and resource library."
     },
     {
       title: "Digital Business Card",
-      link: "http://mypolytopia.s3-website.us-east-2.amazonaws.com/",
-      gitHubLink: "https://github.com/SpencerwRenfro/React-Polytopia",
-      img: "/images/businesscard.svg",
+      link: "https://myreactbusinesscard.com/",
+      gitHubLink: "https://github.com/SpencerRenfro/BusinessCard",
+      img: "/images/businesscard.png",
       description: "A modern digital business card application with QR code generation and contact information sharing."
     },
   ];
@@ -52,7 +52,7 @@ const Home = () => {
           </p>
           <div className="flex justify-center items-center gap-8">
             <a
-              href="https://www.linkedin.com/in/spencer-renfro-854b22174/"
+              href="https://www.linkedin.com/in/spencer-renfro/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:opacity-80 transition-opacity"
@@ -60,7 +60,7 @@ const Home = () => {
               <img src="/images/linkedin.svg" alt="LinkedIn Logo" width="32" height="32" />
             </a>
             <a
-              href="https://github.com/SpencerwRenfro"
+              href="https://github.com/SpencerRenfro"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:opacity-80 transition-opacity"
@@ -68,7 +68,7 @@ const Home = () => {
               <img src="/images/github.svg" alt="GitHub Logo" width="32" height="32" />
             </a>
             <a
-              href="mailto:your_email@example.com"
+              href="mailto:developer@spencerwrenfro.com"
               className="hover:opacity-80 transition-opacity"
             >
               <img src="/images/email.svg" alt="Email Icon" width="32" height="32" />
@@ -99,14 +99,16 @@ const Home = () => {
 
                   {/* Buttons - stacked on mobile, side by side on desktop */}
                   <div className="flex flex-col sm:flex-row gap-2 md:ml-auto">
-                    <a
-                      className="btn btn-primary text-xs py-2 px-4 text-center"
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      View Project
-                    </a>
+                    {project.link && (
+                      <a
+                        className="btn btn-primary text-xs py-2 px-4 text-center"
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Project
+                      </a>
+                    )}
                     <a
                       className="btn btn-outline text-xs py-2 px-4 text-center"
                       href={project.gitHubLink}
@@ -136,3 +138,11 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
+
+
+
+
+

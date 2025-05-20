@@ -70,6 +70,28 @@ const MilitaryService = () => {
                 </div>
               </div>
 
+              <div>
+                <h4 className="text-md font-medium text-gray-800 dark:text-white mb-2">Certifications</h4>
+                {militaryInfo.afsc.certifications && militaryInfo.afsc.certifications.map((cert, index) => (
+                  <div key={index} className="bg-gray-50 dark:bg-slate-900 p-4 rounded-lg border border-gray-200 dark:border-slate-700 mb-3">
+                    <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                      <h5 className="font-medium text-gray-800 dark:text-white">
+                        {cert.name}
+                      </h5>
+                      <span className="text-sm text-gray-500 dark:text-slate-400">
+                        {cert.date}
+                      </span>
+                    </div>
+                    <p className="text-sm text-blue-600 dark:text-blue-400 mb-2">
+                      Issued by: {cert.issuer}
+                    </p>
+                    <p className="text-gray-700 dark:text-slate-300">
+                      {cert.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
               {/* Skills */}
               <div className="mt-8">
                 <h4 className="text-center text-md font-medium text-gray-800 dark:text-white mb-3">
@@ -267,3 +289,4 @@ const MilitaryService = () => {
 };
 
 export default MilitaryService;
+

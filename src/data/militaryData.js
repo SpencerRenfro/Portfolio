@@ -11,6 +11,10 @@ export const militaryInfo = {
       "Hydraulic Systems",
       "Electrical Systems",
       "Technical Documentation",
+      "Schematics",
+      "Soldering",
+      "Safety Wire",
+      "Wiring Diagrams",
     ],
     image: "/images/AGE.png",
     equipment: [
@@ -39,14 +43,23 @@ export const militaryInfo = {
         image: "/images/flood-light.svg"
       },
       {
-        id: "muleheater",
-        name: "Mule Heater",
-        description: "Mobile heating unit used to pre-heat aircraft engines and cockpits in cold weather conditions. Ensures proper oil viscosity and prevents component damage during cold starts.",
-        specs: ["High-temperature output", "Flexible ducting system", "Thermostat controlled", "Diesel-fueled"],
-        maintenance: "Maintenance procedures include burner cleaning, heat exchanger inspection, and thermostat calibration to ensure safe and effective heating.",
-        image: "/images/mule-heater.svg"
+        id: "mule",
+        name: "Mule",
+        description: "Specialized hydraulic test stand used to provide precise hydraulic pressure to aircraft systems. Essential for testing and troubleshooting flight control surfaces, landing gear, and other hydraulic components.",
+        specs: ["Variable pressure output", "Multiple hydraulic circuits", "Digital pressure monitoring", "Self-contained reservoir"],
+        maintenance: "Maintenance procedures include hydraulic fluid analysis, filter replacement, pump inspection, and pressure calibration to ensure accurate testing capabilities.",
+        image: "/images/Mule.png"
       }
     ],
+    certifications: [
+      {
+        name: "EPA 608 Universal Certification",
+        date: "June 2014",
+        issuer: "Environmental Protection Agency",
+        description: "Certified for Types I, II, and III refrigerant handling and recovery. This certification permits work on small appliances, high-pressure equipment, and low-pressure systems in accordance with federal regulations on refrigerant management.",
+        image: "/images/epa-cert.svg"
+      }
+    ]
   },
   assignments: [
     {
@@ -140,3 +153,5 @@ export const militaryInfo = {
       rankImage: "/images/SrAirman.png",
   },
 };
+
+
