@@ -40,14 +40,14 @@ export const militaryInfo = {
         maintenance: "Routine maintenance includes fuel system inspection, compressor wash, oil and filter changes, turbine and ignition system checks, and leak testing to ensure dependable air delivery and safe engine starts.",
         image: "/images/-60.png"
       },
-      {
-        id: "floodlight",
-        name: "Flood Light",
-        description: "Portable high-intensity lighting system used for nighttime maintenance operations and flight line illumination. Provides essential visibility for technical work in low-light conditions.",
-        specs: ["Metal halide lamps", "360° rotation capability", "Extendable mast up to 25 feet", "Diesel generator powered"],
-        maintenance: "Regular maintenance includes lamp replacement, electrical system checks, and mast extension mechanism lubrication.",
-        image: "/images/flood-light.svg"
-      },
+      // {
+      //   id: "floodlight",
+      //   name: "Flood Light",
+      //   description: "Portable high-intensity lighting system used for nighttime maintenance operations and flight line illumination. Provides essential visibility for technical work in low-light conditions.",
+      //   specs: ["Metal halide lamps", "360° rotation capability", "Extendable mast up to 25 feet", "Diesel generator powered"],
+      //   maintenance: "Regular maintenance includes lamp replacement, electrical system checks, and mast extension mechanism lubrication.",
+      //   image: "/images/flood-light.svg"
+      // },
       {
         id: "mule",
         name: "Mule",
