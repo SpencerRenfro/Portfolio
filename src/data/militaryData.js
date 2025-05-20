@@ -11,6 +11,10 @@ export const militaryInfo = {
       "Hydraulic Systems",
       "Electrical Systems",
       "Technical Documentation",
+      "Schematics",
+      "Soldering",
+      "Safety Wire",
+      "Wiring Diagrams",
     ],
     image: "/images/AGE.png",
     equipment: [
@@ -36,14 +40,14 @@ export const militaryInfo = {
         maintenance: "Routine maintenance includes fuel system inspection, compressor wash, oil and filter changes, turbine and ignition system checks, and leak testing to ensure dependable air delivery and safe engine starts.",
         image: "/images/-60.png"
       },
-      // {
-      //   id: "floodlight",
-      //   name: "Flood Light",
-      //   description: "Portable high-intensity lighting system used for nighttime maintenance operations and flight line illumination. Provides essential visibility for technical work in low-light conditions.",
-      //   specs: ["Metal halide lamps", "360° rotation capability", "Extendable mast up to 25 feet", "Diesel generator powered"],
-      //   maintenance: "Regular maintenance includes lamp replacement, electrical system checks, and mast extension mechanism lubrication.",
-      //   image: "/images/flood-light.svg"
-      // },
+      {
+        id: "floodlight",
+        name: "Flood Light",
+        description: "Portable high-intensity lighting system used for nighttime maintenance operations and flight line illumination. Provides essential visibility for technical work in low-light conditions.",
+        specs: ["Metal halide lamps", "360° rotation capability", "Extendable mast up to 25 feet", "Diesel generator powered"],
+        maintenance: "Regular maintenance includes lamp replacement, electrical system checks, and mast extension mechanism lubrication.",
+        image: "/images/flood-light.svg"
+      },
       {
         id: "mule",
         name: "Mule",
@@ -51,6 +55,15 @@ export const militaryInfo = {
         specs: ["Variable pressure output", "Multiple hydraulic circuits", "Digital pressure monitoring", "Self-contained reservoir"],
         maintenance: "Maintenance procedures include hydraulic fluid analysis, filter replacement, pump inspection, and pressure calibration to ensure accurate testing capabilities.",
         image: "/images/Mule.png"
+      }
+    ],
+    certifications: [
+      {
+        name: "EPA 608 Universal Certification",
+        date: "June 2014",
+        issuer: "Environmental Protection Agency",
+        description: "Certified for Types I, II, and III refrigerant handling and recovery. This certification permits work on small appliances, high-pressure equipment, and low-pressure systems in accordance with federal regulations on refrigerant management.",
+        image: "/images/epa-cert.svg"
       }
     ],
   },
@@ -146,3 +159,5 @@ export const militaryInfo = {
       rankImage: "/images/SrAirman.png",
   },
 };
+
+
