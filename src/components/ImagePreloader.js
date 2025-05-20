@@ -18,24 +18,23 @@ const ImagePreloader = () => {
       '/images/email.svg',
 
       // Project images
-      '/images/scanner.svg',
-      '/images/polytopia.svg',
-      '/images/guesthouse.svg',
-      '/images/businesscard.svg',
+      '/images/barcode.png',
+      '/images/polytopia.png',
+      '/images/guesthouse.png',
+      '/images/businesscard.png',
 
       // Profile images
       '/images/Headshot.png',
 
       // Flag images
-      '/images/USA_Flag.png',
-      '/images/UK_Flag.png',
+      '/images/USA.svg',
+      '/images/England.svg',
       '/images/German_Flag.png',
 
       // Equipment images
-      '/images/generator-86.svg',
-      '/images/air-conditioner-60.svg',
-      '/images/flood-light.svg',
-      '/images/mule-heater.svg',
+      '/images/-86.png',
+      '/images/-60.png',
+      '/images/Mule.png',
     ];
 
     // Add military images

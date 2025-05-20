@@ -143,9 +143,6 @@ const SeasonStatsCard = ({ seasonData, logos }) => {
           {renderStatCard(combinedStats.daysTracked, "Days Tracked", false, "📅")}
           {renderStatCard(combinedStats.lifts, "Lifts", false, "🚠")}
           {renderStatCard(combinedStats.trails, "Trails", false, "⛷️")}
-        </div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-5 mb-6">
           {renderStatCard(combinedStats.miles, "Miles", false, "🏔️")}
           {renderStatCard(
             combinedStats.vertFt,
