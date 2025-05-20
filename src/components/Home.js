@@ -8,7 +8,8 @@ const Home = () => {
       link: "",
       gitHubLink: "https://github.com/SpencerRenfro/Scanner_App",
       img: "/images/barcode.png",
-      description: "A mobile-friendly app for scanning and organizing documents with OCR capabilities."
+      description: "A mobile-friendly app for scanning and organizing documents with OCR capabilities.",
+      hideViewProject: true
     },
     {
       title: "Polytopia Calculator",
@@ -22,7 +23,8 @@ const Home = () => {
       link: "http://mypolytopia.s3-website.us-east-2.amazonaws.com/",
       gitHubLink: "https://github.com/SpencerwRenfro/React-Polytopia",
       img: "/images/guesthouse.png",
-      description: "A responsive website for a counseling practice, featuring appointment scheduling and resource library."
+      description: "A responsive website for a counseling practice, featuring appointment scheduling and resource library.",
+      hideViewProject: true
     },
     {
       title: "Digital Business Card",
@@ -38,7 +40,7 @@ const Home = () => {
       {/* Header Section */}
       <div className="grid grid-cols-12 px-10 pt-10 mb-20">
         <div className="col-span-12 lg:col-start-3 lg:col-span-8 text-center">
-  
+
           <h1 className="text-5xl mb-3 font-extrabold">Spencer Renfro</h1>
           <h2 className="mb-8 text-3xl uppercase tracking-widest font-light">
             Front-End Developer
@@ -73,14 +75,16 @@ const Home = () => {
 
                   {/* Buttons - stacked on mobile, side by side on desktop */}
                   <div className="flex flex-col sm:flex-row gap-2 md:ml-auto">
-                    <a
-                      className="btn btn-primary text-xs py-2 px-4 text-center"
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      View Project
-                    </a>
+                    {!project.hideViewProject && (
+                      <a
+                        className="btn btn-primary text-xs py-2 px-4 text-center"
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Project
+                      </a>
+                    )}
                     <a
                       className="btn btn-outline text-xs py-2 px-4 text-center"
                       href={project.gitHubLink}
