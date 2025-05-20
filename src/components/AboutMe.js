@@ -12,7 +12,6 @@ const AboutMe = () => {
       <div className="grid grid-cols-12 px-10 mb-20">
         <div className="col-span-12 lg:col-start-3 lg:col-span-8">
           <h1 className="text-4xl mb-8 font-bold text-center">About Me</h1>
-
           <div className="flex flex-col md:flex-row gap-10 mb-12">
             <div className="md:w-1/3 flex justify-center">
               <PreloadedImage
@@ -21,9 +20,7 @@ const AboutMe = () => {
                 alt="Spencer Renfro"
               />
             </div>
-
             <div className="md:w-2/3">
-
               <p className="mb-4 text-lg">
                 I am a passionate front-end developer with a strong foundation
                 in React, HTML, CSS, and JavaScript. I enjoy creating
@@ -39,11 +36,8 @@ const AboutMe = () => {
             </div>
           </div>
 
-
-
           {/* Skills Section */}
           <CodingSkills />
-          {/* Projects Section */}
 
           {/* Experience Section */}
 
@@ -84,10 +78,8 @@ const AboutMe = () => {
               </div>
             </div>
           </div>
-
           {/* Military Service Section */}
           <MilitaryService />
-
           {/* Interests Section */}
           <div className="mb-12">
             <h2 className="text-2xl mb-6 font-semibold">Interests</h2>
@@ -101,17 +93,14 @@ const AboutMe = () => {
               <li className="mb-2">Exploring new coffee shops</li>
               <li className="mb-2">Snowboarding</li>
             </ul>
-
             {/* Snowboarding Stats */}
             <SnowboardingStats />
           </div>
         </div>
       </div>
-
       {/* Footer Section */}
       <Footer />
     </div>
   );
 };
-
 export default AboutMe;
