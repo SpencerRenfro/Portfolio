@@ -5,15 +5,15 @@ function CodingProjects() {
         {
           title: "Scanner App",
           link: "https://scanner-app.example.com/",
-          gitHubLink: "https://github.com/SpencerwRenfro/scanner-app",
+          gitHubLink: "https://github.com/SpencerRenfro/Scanner_App",
           img: "/images/barcode.png",
           description: "A mobile-friendly app for scanning and organizing documents with OCR capabilities.",
           hideViewProject: true
         },
         {
           title: "Polytopia Calculator",
-          link: "http://mypolytopia.s3-website.us-east-2.amazonaws.com/",
-          gitHubLink: "https://github.com/SpencerwRenfro/React-Polytopia",
+          link: "https://mypolytopiacalculator.com/",
+          gitHubLink: "https://github.com/SpencerRenfro/React_Polytopia",
           img: "/images/polytopia.png",
           description: "A strategic calculator tool for the popular mobile game Polytopia, helping players optimize their gameplay."
         },
@@ -27,8 +27,8 @@ function CodingProjects() {
         // },
         {
           title: "Digital Business Card",
-          link: "http://mypolytopia.s3-website.us-east-2.amazonaws.com/",
-          gitHubLink: "https://github.com/SpencerwRenfro/React-Polytopia",
+          link: "https://myreactbusinesscard.com/",
+          gitHubLink: "https://github.com/SpencerRenfro/React_Business_Card",
           img: "/images/businesscard.png",
           description: "A modern digital business card application with QR code generation and contact information sharing."
         },

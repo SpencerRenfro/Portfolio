@@ -28,7 +28,7 @@ const AboutMe = () => {
                 problems.
               </p>
               <p className="mb-4 text-lg">
-                With a background in military service and aerospace technology,
+                With a background in aerospace ground technology,
                 I bring a unique perspective to my development work. I'm
                 constantly learning and expanding my skills to stay current with
                 the latest technologies and best practices.
