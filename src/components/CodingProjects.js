@@ -17,14 +17,14 @@ function CodingProjects() {
           img: "/images/polytopia.png",
           description: "A strategic calculator tool for the popular mobile game Polytopia, helping players optimize their gameplay."
         },
-        {
-          title: "Guest House Counseling",
-          link: "http://mypolytopia.s3-website.us-east-2.amazonaws.com/",
-          gitHubLink: "https://github.com/SpencerwRenfro/React-Polytopia",
-          img: "/images/guesthouse.png",
-          description: "A responsive website for a counseling practice, featuring appointment scheduling and resource library.",
-          hideViewProject: true
-        },
+        // {
+        //   title: "Guest House Counseling",
+        //   link: "http://mypolytopia.s3-website.us-east-2.amazonaws.com/",
+        //   gitHubLink: "https://github.com/SpencerwRenfro/React-Polytopia",
+        //   img: "/images/guesthouse.png",
+        //   description: "A responsive website for a counseling practice, featuring appointment scheduling and resource library.",
+        //   hideViewProject: true
+        // },
         {
           title: "Digital Business Card",
           link: "http://mypolytopia.s3-website.us-east-2.amazonaws.com/",
