@@ -24,27 +24,33 @@ export const militaryInfo = {
       },
       {
         id: "dash60",
-        name: "-60 Turbine Gernator",
-        description: "High-capacity air conditioning unit used to cool aircraft cockpits and electronic bays during ground operations. Prevents overheating of sensitive avionics systems.",
-        specs: ["30-ton cooling capacity", "Adjustable temperature control", "High-volume air delivery", "Diesel-powered"],
-        maintenance: "Maintenance involves refrigerant level checks, compressor inspections, and airflow testing to maintain optimal cooling performance.",
+        name: "-60 Turbine Generator",
+        description: "Mobile turbine-powered unit designed to supply high-volume, high-pressure bleed air for starting aircraft engines and operating environmental control systems (ECS). Critical for pre-flight operations, especially in extreme temperature conditions or when internal APU systems are unavailable.",
+        specs: [
+          "Turbine engine-powered compressor",
+          "Delivers up to 150 pounds per minute (PPM) of bleed air",
+          "Operating pressure: ~50 PSI",
+          "Dual hose capability for servicing multiple aircraft types",
+          "Diesel fuel operation"
+        ],
+        maintenance: "Routine maintenance includes fuel system inspection, compressor wash, oil and filter changes, turbine and ignition system checks, and leak testing to ensure dependable air delivery and safe engine starts.",
         image: "/images/-60.png"
       },
+      // {
+      //   id: "floodlight",
+      //   name: "Flood Light",
+      //   description: "Portable high-intensity lighting system used for nighttime maintenance operations and flight line illumination. Provides essential visibility for technical work in low-light conditions.",
+      //   specs: ["Metal halide lamps", "360° rotation capability", "Extendable mast up to 25 feet", "Diesel generator powered"],
+      //   maintenance: "Regular maintenance includes lamp replacement, electrical system checks, and mast extension mechanism lubrication.",
+      //   image: "/images/flood-light.svg"
+      // },
       {
-        id: "floodlight",
-        name: "Flood Light",
-        description: "Portable high-intensity lighting system used for nighttime maintenance operations and flight line illumination. Provides essential visibility for technical work in low-light conditions.",
-        specs: ["Metal halide lamps", "360° rotation capability", "Extendable mast up to 25 feet", "Diesel generator powered"],
-        maintenance: "Regular maintenance includes lamp replacement, electrical system checks, and mast extension mechanism lubrication.",
-        image: "/images/flood-light.svg"
-      },
-      {
-        id: "muleheater",
-        name: "Mule Heater",
-        description: "Mobile heating unit used to pre-heat aircraft engines and cockpits in cold weather conditions. Ensures proper oil viscosity and prevents component damage during cold starts.",
-        specs: ["High-temperature output", "Flexible ducting system", "Thermostat controlled", "Diesel-fueled"],
-        maintenance: "Maintenance procedures include burner cleaning, heat exchanger inspection, and thermostat calibration to ensure safe and effective heating.",
-        image: "/images/mule-heater.svg"
+        id: "mule",
+        name: "Mule",
+        description: "Specialized hydraulic test stand used to provide precise hydraulic pressure to aircraft systems. Essential for testing and troubleshooting flight control surfaces, landing gear, and other hydraulic components.",
+        specs: ["Variable pressure output", "Multiple hydraulic circuits", "Digital pressure monitoring", "Self-contained reservoir"],
+        maintenance: "Maintenance procedures include hydraulic fluid analysis, filter replacement, pump inspection, and pressure calibration to ensure accurate testing capabilities.",
+        image: "/images/Mule.png"
       }
     ],
   },

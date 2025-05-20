@@ -23,6 +23,9 @@ const ImagePreloader = () => {
       '/images/guesthouse.svg',
       '/images/businesscard.svg',
 
+      // Profile images
+      '/images/Headshot.png',
+
       // Flag images
       '/images/USA_Flag.png',
       '/images/UK_Flag.png',
